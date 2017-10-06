@@ -60,3 +60,4 @@ The test report is a transcript of the execution of the test plan, with the actu
 ## Resources
 
 1. Downloaden van rh-base: https://galaxy.ansible.com/bertvv/rh-base/
+2. rh-base role configuratie: https://github.com/bertvv/ansible-role-rh-base/blob/master/README.md
