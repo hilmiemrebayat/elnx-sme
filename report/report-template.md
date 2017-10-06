@@ -59,4 +59,4 @@ The test report is a transcript of the execution of the test plan, with the actu
 
 ## Resources
 
-List all sources of useful information that you encountered while completing this assignment: books, manuals, HOWTO's, blog posts, etc.
+1. Downloaden van rh-base: https://galaxy.ansible.com/bertvv/rh-base/
