@@ -1,6 +1,6 @@
 # Enterprise Linux Lab Report
 
-- Student name: 
+- Student name: Hilmi Emre Bayat
 - Github repo: <https://github.com/HoGentTIN/elnx-USER.git>
 
 Describe the goals of the current iteration/assignment in a short sentence.
