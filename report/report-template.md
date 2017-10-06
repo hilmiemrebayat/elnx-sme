@@ -11,13 +11,47 @@
 
 ## Test plan
 
-How are you going to verify that the requirements are met? The test plan is a detailed checklist of actions to take, including the expected result for each action, in order to prove your system meets the requirements. Part of this is running the automated tests, but it is not always possible to validate *all* requirements throught these tests.
+
+1. On the host system, go to the local working directory of the project repository
+2. Execute `vagrant status`
+    - There should be one VM, `pu004` with status `not created`. If the VM does exist, destroy it first with `vagrant destroy -f pu004`
+3. Execute `vagrant up pu004`
+    - The command should run without errors (exit status 0)
+4. Log in on the server with `vagrant ssh pu004` and run the acceptance tests. They should succeed
+
+    ```
+    [vagrant@pu004 test]$ sudo /vagrant/test/runbats.sh
+    Running test /vagrant/test/common.bats
+    ✓ EPEL repository should be available
+    ✓ Bash-completion should have been installed
+    ✓ bind-utils should have been installed
+    ✓ Git should have been installed
+    ✓ Nano should have been installed
+    ✓ Tree should have been installed
+    ✓ Vim-enhanced should have been installed
+    ✓ Wget should have been installed
+    ✓ Admin user bert should exist
+    ✓ Custom /etc/motd should be installed
+
+    10 tests, 0 failures
+    ```
+
+    Any tests for the LAMP stack may fail, but this is not part of the current assignment.
+
+5. Log off from the server and ssh to the VM as described below. You should **not** get a password prompt.
+
+    ```
+    $ ssh bert@192.0.2.50
+    Welcome to pu004.localdomain.
+    enp0s3     : 10.0.2.15         fe80::a00:27ff:fe5c:6428/64
+    enp0s8     : 192.0.2.50        fe80::a00:27ff:fecd:aeed/64
+    [bert@pu004 ~]$
+    ```
+ 
 
 ## Procedure/Documentation
 
-Describe *in detail* how you completed the assignment, with main focus on the "manual" work. It is of course not necessary to copy/paste your code in this document, but you can refer to it with a hyperlink.
 
-Make sure to write clean Markdown code, so your report looks good and is clearly structured on Github.
 
 ## Test report
 
