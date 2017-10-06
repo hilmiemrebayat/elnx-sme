@@ -1,7 +1,7 @@
 #! /usr/bin/env bats
 #
 # Acceptance test script for srv010
-admin_user=bert
+admin_user=vagrant
 
 @test "EPEL repository should be available" {
   [ -n "$(yum -C repolist | grep 'epel')" ]
@@ -48,5 +48,3 @@ admin_user=bert
   [ -f /etc/motd ]
   [ -n "$(grep enp0s3 /etc/motd)" ]
 }
-
-
