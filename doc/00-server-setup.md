@@ -30,7 +30,7 @@ The test script `test/common.bats` will be executed on *all* hosts in the setup.
 **Remark** that you need to update your user name in `common.bats` in order for it to work. Adapt the following line:
 
 ```bash
-admin_user=bert
+admin_user=hilmi
 ```
 
 Showing the results of the test suite is essential when showing your work to the lecturer.
