@@ -1,7 +1,7 @@
 #! /usr/bin/env bats
 #
 # Acceptance test script for srv010
-admin_user=vagrant
+admin_user=hilmi
 
 @test "EPEL repository should be available" {
   [ -n "$(yum -C repolist | grep 'epel')" ]
