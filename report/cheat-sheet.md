@@ -1,13 +1,20 @@
 # Cheat sheets and checklists
 
-- Student name: NAME
-- Github repo: URL
+- Student name: Hilmi Emre Bayat
+- Github repo: https://github.com/hilmiemrebayat/elnx-sme/
 
 ## Basic commands
 
 | Task                | Command |
 | :---                | :---    |
 | Query IP-adress(es) | `ip a`  |
+| Status van vagrant opvragen | `vagrant status`  |
+| Het verwijderen en ongedaan maken van de server | `vagrant destroy -f naam_van_server`  |
+| Installeren van server | `vagrant up`  |
+| Inloggen op de server via terminal of cmd | `vagrant ssh naam_server`  |
+| Naar een gewenste map gaan | `cd ...`  |
+| Mappen en bestanden bekijken in de directory | `ls`  |
+
 
 ## Git workflow
 
