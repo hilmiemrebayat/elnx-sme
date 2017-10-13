@@ -31,7 +31,7 @@ wordpress_password=CorkIgWac
     - bertvv.rh-base
     - bertvv.httpd
 ```
-3. Open de terminal, ga naar de map van de installatie en geef "vagrant provision" in als commando om de installatie uit te voeren.
+3. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
 
 
 
