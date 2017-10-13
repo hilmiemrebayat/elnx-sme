@@ -14,6 +14,7 @@
 | Inloggen op de server via terminal of cmd | `vagrant ssh naam_server`  |
 | Naar een gewenste map gaan | `cd ...`  |
 | Mappen en bestanden bekijken in de directory | `ls`  |
+| Installeren van een base voor ansible | `ansible-galaxy install naam_van_base`  |
 
 
 ## Git workflow
