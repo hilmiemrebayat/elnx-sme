@@ -21,6 +21,18 @@ wordpress_password=CorkIgWac
 
 ## Procedure/Documentation
 1. Download de rol bertvv.httpd via ansible met de volgende commando: "ansible-galaxy install bertvv.httpd". Hiermee wordt Apache webserver geïnstalleerd op de server.
+2. Voeg de volgende code bij roles toe in site.yml om apache te installeren op de server: "bertvv.httpd". Site.yml moet als volgt te zien zijn:
+```
+# site.yml
+---
+- hosts: pu004
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.httpd
+```
+3. Open de terminal, ga naar de map van de installatie en geef "vagrant provision" in als commando om de installatie uit te voeren.
+
 
 
 
