@@ -11,6 +11,7 @@
 | Status van vagrant opvragen | `vagrant status`  |
 | Het verwijderen en ongedaan maken van de server | `vagrant destroy -f naam_van_server`  |
 | Installeren van server | `vagrant up`  |
+| Server updaten volgens de laatst uitgevoerde wijzigingen | `vagrant provision`  |
 | Inloggen op de server via terminal of cmd | `vagrant ssh naam_server`  |
 | Naar een gewenste map gaan | `cd ...`  |
 | Mappen en bestanden bekijken in de directory | `ls`  |
