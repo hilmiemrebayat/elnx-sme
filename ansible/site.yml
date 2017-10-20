@@ -5,3 +5,4 @@
   roles:
     - bertvv.rh-base
     - bertvv.httpd
+    - bertvv.mariadb
