@@ -44,10 +44,16 @@ wordpress_password=CorkIgWac
 # aanmaken van een database genaamd wordpressdatabank
 mariadb_databases:
   - wordpressdatabank
-  
+#Aanmeken van een gebruiker voor de databank
+mariadb_users:
+  - name: hilmiemrebayat
+    password: P@ssword
+    priv: '*.*:ALL,GRANT'
+#root wachtwoord van mariadb wijzigen
+mariadb_root_password: P@sswordRoot
 
 ```
-3. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
+4. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
 
 
 
