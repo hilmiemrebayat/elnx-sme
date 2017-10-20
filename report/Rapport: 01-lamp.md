@@ -10,6 +10,12 @@
 
 ## Test plan
 
+All machines in the setup can be tested by executing the following command:
+
+```console
+$ sudo /vagrant/test/runbats.sh
+```
+
 In the test script `test/pu004/lamp.bats`, you may want to change the variables in the test script to the values you have used in your configuration script:
 
 ```bash
