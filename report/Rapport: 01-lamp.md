@@ -231,7 +231,42 @@ wordpress_password=P@ssword
 
 
 ## Test report
+Na het uitvoeren van de commando "sudo /vagrant/test/runbats.sh" komt er als uitvoer het volgende uit:
+```
+[vagrant@pu004 ~]$ sudo /vagrant/test/runbats.sh
+Running test /vagrant/test/common.bats
+ ✓ EPEL repository should be available
+ ✓ Bash-completion should have been installed
+ ✓ bind-utils should have been installed
+ ✓ Git should have been installed
+ ✓ Nano should have been installed
+ ✓ Tree should have been installed
+ ✓ Vim-enhanced should have been installed
+ ✓ Wget should have been installed
+ ✓ Admin user hilmi should exist
+ ✓ Custom /etc/motd should have been installed
 
+10 tests, 0 failures
+Running test /vagrant/test/pu004/lamp.bats
+ ✓ The necessary packages should be installed
+ ✓ The Apache service should be running
+ ✓ The Apache service should be started at boot
+ ✓ The MariaDB service should be running
+ ✓ The MariaDB service should be started at boot
+ ✓ The SELinux status should be ‘enforcing’
+ ✓ Web traffic should pass through the firewall
+ ✓ Mariadb should have a database for Wordpress
+ ✓ The MariaDB user should have "write access" to the database
+ ✓ The website should be accessible through HTTP
+ ✓ The website should be accessible through HTTPS
+ ✓ The certificate should not be the default one
+ ✓ The Wordpress install page should be visible under http://192.0.2.50/wordpress/
+ ✓ MariaDB should not have a test database
+ ✓ MariaDB should not have anonymous users
+
+15 tests, 0 failures
+```
+Hieruit kunnen we besluiten dat de test succesvol is uitgevoerd en alles goed is geconfigureerd.
 ## Resources
 
 1. Downloaden van httpd: https://galaxy.ansible.com/bertvv/httpd/
