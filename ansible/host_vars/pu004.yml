@@ -1,0 +1,11 @@
+# puOO4.yml
+# aanmaken van een database genaamd wordpressdatabank
+mariadb_databases:
+  - wordpressdatabank
+#Aanmeken van een gebruiker voor de databank
+mariadb_users:
+  - name: hilmiemrebayat
+    password: P@ssword
+    priv: '*.*:ALL,GRANT'
+#root wachtwoord van mariadb wijzigen
+mariadb_root_password: P@sswordRoot
