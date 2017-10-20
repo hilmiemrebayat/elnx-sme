@@ -174,4 +174,6 @@ wordpress_password=P@ssword
 ## Resources
 
 1. Downloaden van httpd: https://galaxy.ansible.com/bertvv/httpd/
-2. httpd role configuratie: https://github.com/bertvv/ansible-role-httpd
+2. Downloaden van mariadb: https://galaxy.ansible.com/bertvv/mariadb/
+3. httpd role configuratie: https://github.com/bertvv/ansible-role-httpd
+4. mariadb role configuratie: https://github.com/bertvv/ansible-role-mariadb en https://github.com/nickjj/ansible-mariadb
