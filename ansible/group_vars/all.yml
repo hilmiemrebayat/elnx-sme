@@ -12,9 +12,6 @@ rhbase_install_packages:
  - nano
  - tree
  - wget
-rhbase_firewall_allow_services:
- - http
- - https
 rhbase_admin_user: hilmi
 rhbase_admin_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2bRpvOGm2Rvvta4avhCjYUqEn09UFEK/WGNbq/yr6edO7cQGlbGw/0+/kT/lGWOA6xx2HPOqfse7QntLtgO1fkJR2EvYn66gJ27e7uwgBs60ElYfMuOEox1KeuDq8RlkDWLapwatxzSs4pj8N+KJd+kG0Zxl5NDGfJc1Ntz92EK5aQ0arrLJ4pgw/YpwfQ9fazfX20MOZpvJ0zRwuMoENv46Byo66XGOwNul9XA3tGj2yTDyVfcQYzzh+S4sBvF0zMoJJ1YEd3heSvLPpJHcJqfwZ0SBLvfP4nC9JtAUin3g3iNPFcUdEr2O6hrbIf2CooFXvCyW/eR5SsUexMorn hilmiemrebayat@MacBook-Pro-van-Hilmi.local
 rhbase_users:
