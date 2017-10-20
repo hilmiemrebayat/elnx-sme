@@ -27,7 +27,7 @@ wordpress_password=CorkIgWac
 
 ## Procedure/Documentation
 1. Download de rol bertvv.httpd en bertvv.mariadb via ansible met de volgende commando: "ansible-galaxy install bertvv.httpd" en "ansible-galaxy install bertvv.mariadb". Hiermee wordt Apache webserver en MariaDB geïnstalleerd op de server.
-2. Voeg de volgende code bij roles toe in site.yml om apache te installeren op de server: "bertvv.httpd". Site.yml moet als volgt te zien zijn:
+2. Voeg de volgende code bij roles toe in site.yml om apache en mariadb te installeren op de server: "bertvv.httpd" en "bertvv.mariadb". Site.yml moet als volgt gewijzigd worden:
 ```
 # site.yml
 ---
@@ -38,7 +38,22 @@ wordpress_password=CorkIgWac
     - bertvv.httpd
     - bertvv.mariadb
 ```
-3. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
+3. Daarna moet men een map host_vars en daarin een bestand pu004.yml aanmaken in de map ansible. Na het aanmaken voegt men de volgende code toe in pu004.yml (Normaalgezien kunnen we het volgende code ook toevoegen in all.yml maar omdat we meerdere servers gaan installeren en niet alle servers mariadb nodig hebben moeten we het in een andere bestand zetten).
+```
+# puOO4.yml
+# aanmaken van een database genaamd wordpressdatabank
+mariadb_databases:
+  - wordpressdatabank
+#Aanmeken van een gebruiker voor de databank
+mariadb_users:
+  - name: hilmiemrebayat
+    password: P@ssword
+    priv: '*.*:ALL,GRANT'
+#root wachtwoord van mariadb wijzigen
+mariadb_root_password: P@sswordRoot
+
+```
+4. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
 
 
 
