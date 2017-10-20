@@ -16,6 +16,7 @@
 | Naar een gewenste map gaan | `cd ...`  |
 | Mappen en bestanden bekijken in de directory | `ls`  |
 | Installeren van een base voor ansible | `ansible-galaxy install naam_van_base`  |
+| SSH key aanmaken | `ssh-keygen -t rsa`  |
 
 
 ## Git workflow
