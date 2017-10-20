@@ -61,14 +61,64 @@ mariadb_root_password: P@sswordRoot
 wordpress_database: wordpressdatabank
 wordpress_user: hilmiemrebayat
 wordpress_password: P@ssword
+```
+4. Maak nu een certificaat aan voor de server. Dit kan je doen door de stappen op het volgende website te volgen (Je moet de stappen vanaf titel "Create A Certificate (Done Once Per Device)" volgen): https://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/
 
+5. Na het aanmaken van de server maak een map "certificaten" aan in de map "ansible". Voeg daarin de aangemaakte certificaten toe in de vorige stap.
+6. Nadat je de certificaten hebt toegevoegd pas site.yml en pu004.yml aan als volgt:
+- pu004.yml
+```
+# puOO4.yml
+#Firewall configureren
+rhbase_firewall_allow_services:
+    - http
+    - https
+# aanmaken van een database genaamd wordpressdatabank
+mariadb_databases:
+  - name: wordpressdatabank
+#Aanmeken van een gebruiker voor de databank
+mariadb_users:
+  - name: hilmiemrebayat
+    password: P@ssword
+    priv: '*.*:ALL,GRANT'
+#root wachtwoord van mariadb wijzigen
+mariadb_root_password: P@sswordRoot
+#Wordpress configureren
+wordpress_database: wordpressdatabank
+wordpress_user: hilmiemrebayat
+wordpress_password: P@ssword
+
+httpd_SSLCertificateFile: /etc/pki/tls/certs/ca.crt
+httpd_SSLCertificateKeyFile: /etc/pki/tls/private/ca.key
 
 ```
-4. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
+- site.yml
+```
+# site.yml
+---
+- hosts: pu004
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.httpd
+    - bertvv.mariadb
+    - bertvv.wordpress
+  pre_tasks:
+    - name: Webserver private key kopieren
+      copy:
+        src: certificaten/device.key
+        dest: /etc/pki/tls/private/ca.key
+    - name: Web server certificaat kopieren
+      copy:
+        src: certificaten/device.crt
+        dest: /etc/pki/tls/certs/ca.crt
+
+```
+7. Open de terminal, ga naar de map waar de vagrantfile staat met "cd ..." en geef "vagrant provision" in als commando om de installatie uit te voeren.
 
 
 
-5. Wijzig de bestand lamp.bats in de map test/pu004/ als volgt:
+8. Wijzig de bestand lamp.bats in de map test/pu004/ als volgt:
 ```
 #! /usr/bin/env bats
 #
@@ -177,7 +227,7 @@ wordpress_password=P@ssword
 }
 
 ```
-6. Nadat de installatie klaar is, voer de volgende commando uit om te testen of alles juist is geïnstalleerd en geconfigureerd: "sudo /vagrant/test/runbats.sh".
+9. Nadat de installatie klaar is, voer de volgende commando uit om te testen of alles juist is geïnstalleerd en geconfigureerd: "sudo /vagrant/test/runbats.sh".
 
 
 ## Test report
