@@ -49,5 +49,5 @@ wordpress_password=CorkIgWac
 
 ## Resources
 
-1. Downloaden van rh-base: https://galaxy.ansible.com/bertvv/httpd/
+1. Downloaden van httpd: https://galaxy.ansible.com/bertvv/httpd/
 2. httpd role configuratie: https://github.com/bertvv/ansible-role-httpd
