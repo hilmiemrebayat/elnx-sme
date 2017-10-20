@@ -17,3 +17,6 @@ mariadb_root_password: P@sswordRoot
 wordpress_database: wordpressdatabank
 wordpress_user: hilmiemrebayat
 wordpress_password: P@ssword
+
+httpd_SSLCertificateFile: /etc/pki/tls/certs/ca.crt
+httpd_SSLCertificateKeyFile: /etc/pki/tls/private/ca.key
