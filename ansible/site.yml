@@ -6,3 +6,13 @@
     - bertvv.rh-base
     - bertvv.httpd
     - bertvv.mariadb
+    - bertvv.wordpress
+  pre_tasks:
+    - name: Webserver private key kopieren
+      copy:
+        src: certificaten/device.key
+        dest: /etc/pki/tls/private/ca.key
+    - name: Web server certificaat kopieren
+      copy:
+        src: certificaten/device.crt
+        dest: /etc/pki/tls/certs/ca.crt

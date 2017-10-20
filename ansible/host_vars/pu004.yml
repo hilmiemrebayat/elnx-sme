@@ -1,8 +1,8 @@
 # puOO4.yml
 #Firewall configureren
 rhbase_firewall_allow_services:
- - http
- - https
+    - http
+    - https
 # aanmaken van een database genaamd wordpressdatabank
 mariadb_databases:
   - name: wordpressdatabank
