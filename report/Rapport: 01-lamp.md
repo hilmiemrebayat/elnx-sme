@@ -275,3 +275,4 @@ Hieruit kunnen we besluiten dat de test succesvol is uitgevoerd en alles goed is
 4. httpd role configuratie: https://github.com/bertvv/ansible-role-httpd
 5. mariadb role configuratie: https://github.com/bertvv/ansible-role-mariadb en https://github.com/nickjj/ansible-mariadb
 6. Wordpress role configuratie: https://github.com/bertvv/ansible-role-wordpress
+7. Aanmaken certificaat: https://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/
