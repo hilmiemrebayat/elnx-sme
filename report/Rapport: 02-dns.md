@@ -10,21 +10,9 @@
   3. Testrapport uitschrijven
 
 ## Test plan
+Both servers can be validated with the test scripts. Execute `sudo /vagrant/test/runbats.sh` to run them. Remark that these tests run locally on the VMs. Ensure that the DNS service is also available from your host system!
 
-All machines in the setup can be tested by executing the following command:
-
-```console
-$ sudo /vagrant/test/runbats.sh
-```
-
-In the test script `test/pu004/lamp.bats`, you may want to change the variables in the test script to the values you have used in your configuration script:
-
-```bash
-mariadb_root_password=fogMeHud8
-wordpress_database=wp_db
-wordpress_user=wp_user
-wordpress_password=CorkIgWac
-```
+Om de test uit te voeren moet je dus de volgende commando uitvoeren: sudo /vagrant/test/runbats.sh
 
 ## Procedure/Documentation
 1. 
