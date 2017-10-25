@@ -3,7 +3,7 @@
 - Student name: Hilmi Emre Bayat
 - Github repo: https://github.com/hilmiemrebayat/elnx-sme
 
-  1. 
+  1. DNS en slave dns server aanmaken
   2. Testplan uitvoeren dat is geschreven door de leerkracht
   3. Testrapport uitschrijven
 
