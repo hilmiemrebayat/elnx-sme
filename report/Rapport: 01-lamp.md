@@ -3,7 +3,7 @@
 - Student name: Hilmi Emre Bayat
 - Github repo: https://github.com/hilmiemrebayat/elnx-sme
 
-  1. Volgende rol downloaden via Ansible en installeren op de server met de "vagrant provision"
+  1. Lamp server maken door de volgende rollen te downloaden via Ansible en te installeren op de server met "vagrant provision"
     - bertvv.httpd (command om te installeren: $ ansible-galaxy install bertvv.httpd)
     - bertvv.mariadb (command om te installeren: $ ansible-galaxy install bertvv.mariadb)
     - bertvv.wordpress (command om te installeren: $ ansible-galaxy install bertvv.wordpress)
