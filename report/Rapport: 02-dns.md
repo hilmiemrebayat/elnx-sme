@@ -3,9 +3,7 @@
 - Student name: Hilmi Emre Bayat
 - Github repo: https://github.com/hilmiemrebayat/elnx-sme
 
-  1. Volgende rol downloaden via Ansible en installeren op de server met de "vagrant provision"
-    - bertvv.httpd (command om te installeren: $ ansible-galaxy install bertvv.httpd)
-    - bertvv.mariadb (command om te installeren: $ ansible-galaxy install bertvv.mariadb)
+  1. 
   2. Testplan uitvoeren dat is geschreven door de leerkracht
   3. Testrapport uitschrijven
 
