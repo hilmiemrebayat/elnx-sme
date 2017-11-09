@@ -16,3 +16,8 @@
       copy:
         src: certificaten/device.crt
         dest: /etc/pki/tls/certs/ca.crt
+- hosts: pu001
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
