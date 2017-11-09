@@ -29,7 +29,7 @@ Om de test uit te voeren moet je dus de volgende commando uitvoeren: `sudo /vagr
     - bertvv.rh-base
     - bertvv.bind
 ```
-4. Open de terminal, ga met 'cd <pad van bestand(en)>' naar de map waar je de vagrant file terug kan vinden en voer de commando `vagrant up` uit zodat de server geïnstalleerd wordt.
+4. Open de terminal, ga met 'cd <pad van bestand(en)>' naar de map waar je de vagrant file terug kan vinden en voer de commando `vagrant up` en daarna `vagrant provision` uit zodat de server geïnstalleerd wordt.
 ## Test report
 
 ## Resources
