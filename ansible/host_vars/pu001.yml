@@ -1,0 +1,8 @@
+# puOO1.yml
+bind_zone_name: avalon.lan
+
+bind_zone_master_server_ip: 192.0.2.10
+
+bind_zone_networks:
+  - "192.0.2"
+  - "172.16"
