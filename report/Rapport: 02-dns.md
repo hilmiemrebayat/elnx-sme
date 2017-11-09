@@ -21,7 +21,7 @@ Om de test uit te voeren moet je dus de volgende commando uitvoeren: `sudo /vagr
 ```
    Dit code komt onder pu004. Dankzij dit code laten we vagrant een server aanmaken met de naam pu001 en ip adres 192.0.2.10.
    
-3. Voeg de volgende code toe aan site.yml, zodat de host aangemaakt en de roles "rh-base" en "bind" geïnstalleerd worden op de server pu001.
+3. Voeg de volgende code toe aan site.yml, zodat de host aangemaakt en de roles "rh-base" (zorgt ervoor dat de basis installatie uitgevoerd wordt op de server) en "bind" (configureerd de server als DNS server) geïnstalleerd worden op de server pu001.
 ```Yaml
 - hosts: pu001
   sudo: true
