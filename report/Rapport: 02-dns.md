@@ -88,8 +88,12 @@ bind_zone_hosts:
       - files
 
 ```
-
-
+8. Nadat we de zones hebben geconfigureerd moeten we de mx record pointen voor de mail server. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
+```Yaml
+bind_zone_mail_servers:
+  - name: pu003
+    preference: 10
+```
 ## Test report
 
 ## Resources
