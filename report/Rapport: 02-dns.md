@@ -103,7 +103,7 @@ bind_zone_mail_servers:
   - name: pu003
     preference: 10
 ```
-8. Als laatst gaan we de firewall configureren. Dit doen we gemakkelijk door de volgende code toe te voegen aan "pu00A.yml"
+8. Als laatst gaan we de firewall configureren. Dit doen we gemakkelijk door de volgende code toe te voegen aan "pu001.yml"
 ```Yaml
 rhbase_firewall_allow_services:
   - dns
@@ -128,9 +128,40 @@ rhbase_firewall_allow_services:
     - bertvv.rh-base
     - bertvv.bind
 ```
-4. Open de terminal, ga met 'cd <pad van bestand(en)>' naar de map waar je de vagrant file terug kan vinden en voer de commando `vagrant up` en daarna `vagrant provision` uit zodat de server geïnstalleerd wordt.
-5. Nadat de installatie voltooid is zien we dat de installatie van role "bind" niet lukt. Dit komt omdat we de minimale vereisten van voor de dns server niet hebben meegegeven. Hierdoor gaan we de DNS Server eerst congigureren en daarna laten installeren. Om dit te doen maak je eerst in het map Ansible -> host_vars een bestand genaamd "pu002.yml" aan. Dankzij dit bestand kunnen we DNS Server configureren.
+4. Maak een bestand in het map Ansible -> host_vars genaamd "pu002.yml" aan. Dankzij dit bestand kunnen we de Slave DNS Server configureren.
+5. Omdat we een slave DNS server gaan maken moeten we niet alle minimale vereisten van een dns server configreren. Het enige wat eigenlijk weg valt is de "bind_zone_hosts". Om de slave dns server te configureren moeten we de volgende code toevoegen in het bestand "pu001.yml":
+```Yaml
+#Hier wordt de domein naam geconfigureerd
+bind_zone_name: avalon.lan
 
+#Hier wordt de ip-adres van de DNS server geconfigureerd
+bind_zone_master_server_ip: 192.0.2.10
+
+#Hier worden de  netwerken dat in de domein zitten geconfigureerd. In ons geval zijn er twee verschillende domeinen, namelijk 192.0.2.0 en 172.16.0.0
+bind_zone_networks:
+  - "192.0.2"
+  - "172.16"
+  
+#Hier worden de namen van de dns servers in het domein geconfigureerd. In ons domein hebben we twee dns servers met de namen pu001 (DNS server) en pu002 (slave dns server)
+bind_zone_name_servers:
+  - pu001
+  - pu002
+ 
+#Hier geef je mee, naar welke interfaces er naar geluisterd moet worden. In ons geval moet er naar alle interfaces geluisterd worden.
+bind_listen_ipv4:
+  - any
+  
+#Hier geef je mee welke servers toegang hebben tot de DNS server. In ons geval hebben alle servers toegang.
+bind_allow_query:
+  - any
+```
+6. Nadat de basis configuratie van de slave dns server geconfigureerd is gaan we de firewall configureren. Dit doen we gemakkelijk door de volgende code toe te voegen aan "pu002.yml"
+```Yaml
+rhbase_firewall_allow_services:
+  - dns
+```
+7. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
+8. Nadat de installatie voltooid is, voer je de commando `vagrant ssh pu001` uit. Dankzij dit commando log je in, in het dns server. Na het inloggen voer je de commando `sudo /vagrant/test/runbats.sh` uit om de test van de server te starten. Indien alle testen slagen, is alles goed geconfigureerd en werkt de dns server zonder problemen.
 ## Test report
 ### DNS Server
 
