@@ -14,45 +14,6 @@ bind_zone_name_servers:
   - pu001
   - pu002
 
-#Hier worden alle servers geconfigureerd binnen het domein, zodat de dns server een lookup en reserve zone kan creeëren voor het vertalen van de IP-Adres naar naam en omgekeerd.
-bind_zone_hosts:
-  - name: r001
-    ip: 192.0.2.254
-    aliases:
-      - gw
-  - name: pu001
-    ip: 192.0.2.10
-    aliases:
-      - ns1
-  - name: pu002
-    ip: 192.0.2.11
-    aliases:
-      - ns2
-  - name: pu003
-    ip: 192.0.2.20
-    aliases:
-      - mail
-  - name: pu004
-    ip: 192.0.2.50
-    aliases:
-      - www
-  - name: pr001
-    ip: 172.16.0.2
-    aliases:
-      - dhcp
-  - name: pr002
-    ip: 172.16.0.3
-    aliases:
-      - directory
-  - name: pr010
-    ip: 172.16.0.10
-    aliases:
-      - inside
-  - name: pr011
-    ip: 172.16.0.11
-    aliases:
-      - files
-
 #Hier geef je mee, naar welke interfaces er naar geluisterd moet worden. In ons geval moet er naar alle interfaces geluisterd worden.
 bind_listen_ipv4:
   - any
@@ -60,10 +21,7 @@ bind_listen_ipv4:
 #Hier geef je mee welke servers toegang hebben tot de DNS server. In ons geval hebben alle servers toegang.
 bind_allow_query:
   - any
-#Hier wordt de mx record point voor de mail server geconfigureerd
-bind_zone_mail_servers:
-  - name: pu003
-    preference: 10
+
 #Firewall configureren als DNS Server
 rhbase_firewall_allow_services:
   - dns
