@@ -14,7 +14,7 @@ Om de test uit te voeren moet je dus de volgende commando uitvoeren: `sudo /vagr
 
 ## Procedure/Documentation
 1. Downloaden en installeren van bertvv.bind met de volgende commando: `ansible-galaxy install bertvv.bind`. Dankzij dit role is het mogelijk om een DNS server op te zetten.
-2. De volgende code toevoegen aan het document vagrant-hosts.yml: 
+2. Voeg de volgende code toe aan de document vagrant-hosts.yml: 
 ```Yaml
 - name: pu001
   ip: 192.0.2.10
@@ -30,25 +30,26 @@ Om de test uit te voeren moet je dus de volgende commando uitvoeren: `sudo /vagr
     - bertvv.bind
 ```
 4. Open de terminal, ga met 'cd <pad van bestand(en)>' naar de map waar je de vagrant file terug kan vinden en voer de commando `vagrant up` en daarna `vagrant provision` uit zodat de server geïnstalleerd wordt.
-5. Nadat de installatie voltooid is zien we dat de installatie van role "bind" faild. Dit komt omdat we de master server ip adres niet hebben geconfigureerd. Hierdoor gaan we de DNS Server eerst congigureren en daarna laten installeren. Om dit te doen maak je eerst in het map Ansible -> host_vars een bestand "pu001.yml" aan. Dankzij dit bestand kunnen we DNS Server configureren.
-6. Eerst maken we een domein aan met de naam "avalon.lan" zoals vermeld op de [volgende document](https://github.com/hilmiemrebayat/elnx-sme/blob/master/doc/02-dns.md). Hievoor voegen we in het bestand "pu001.yml" dat we in stap 5 hebben aangemaakt de volgende code toevoegen:
+5. Nadat de installatie voltooid is zien we dat de installatie van role "bind" niet lukt. Dit komt omdat we de minimale vereisten van voor de dns server niet hebben meegegeven. Hierdoor gaan we de DNS Server eerst congigureren en daarna laten installeren. Om dit te doen maak je eerst in het map Ansible -> host_vars een bestand genaamd "pu001.yml" aan. Dankzij dit bestand kunnen we DNS Server configureren.
+6. Eerst gaan we de minimale vereisten configureren. De minimale veriesten om de server werkend te krijgen staat op dit [document](https://galaxy.ansible.com/bertvv/bind/). Voeg de volgende code toe in het bestand "pu001.yml" dat we in stap 5 hebben aangemaakt om de DNS server te configureren:
 ```Yaml
+#Hier wordt de domein naam geconfigureerd
 bind_zone_name: avalon.lan
-```
-7. Daarna voegen we ook de master server ip adres toe en verbinden we de twee verschillende ip adres zones met elkaar. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
-```Yaml
+
+#Hier wordt de ip-adres van de DNS server geconfigureerd
 bind_zone_master_server_ip: 192.0.2.10
 
+#Hier worden de  netwerken dat in de domein zitten geconfigureerd. In ons geval zijn er twee verschillende domeinen, namelijk 192.0.2.0 en 172.16.0.0
 bind_zone_networks:
   - "192.0.2"
   - "172.16"
-
-```
-  Nadat je de bovenstaande code hebt toegevoegd, open je de terminal en doe je `vagrant provision`. Nu zal de dns server voor een deel geconfigureerd worden.
- 
-8. Nu gaan we de reserve en lookup lookup zones configureren van elk server. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
-
-```Yaml
+  
+#Hier worden de namen van de dns servers in het domein geconfigureerd. In ons domein hebben we twee dns servers met de namen pu001 (DNS server) en pu002 (slave dns server)
+bind_zone_name_servers:
+  - pu001
+  - pu002
+  
+#Hier worden alle servers geconfigureerd binnen het domein, zodat de dns server een lookup en reserve zone kan creeëren voor het vertalen van de IP-Adres naar naam en omgekeerd.
 bind_zone_hosts:
   - name: r001
     ip: 192.0.2.254
@@ -86,14 +87,22 @@ bind_zone_hosts:
     ip: 172.16.0.11
     aliases:
       - files
-
+      
+#Hier geef je mee, naar welke interfaces er naar geluisterd moet worden. In ons geval moet er naar alle interfaces geluisterd worden.
+bind_listen_ipv4:
+  - any
+  
+#Hier geef je mee welke servers toegang hebben tot de DNS server. In ons geval hebben alle servers toegang.
+bind_allow_query
+  - any
 ```
-8. Nadat we de zones hebben geconfigureerd moeten we de mx record pointen voor de mail server. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
+7. Nadat we de basis configuratie hebben uitgevoerd moeten we de mx record point voor de mail server configureren. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
 ```Yaml
 bind_zone_mail_servers:
   - name: pu003
     preference: 10
 ```
+ 
 ## Test report
 
 ## Resources
