@@ -8,9 +8,19 @@
   3. Testrapport uitschrijven
 
 ## Test plan
+### Test script
 Both servers can be validated with the test scripts. Execute `sudo /vagrant/test/runbats.sh` to run them. Remark that these tests run locally on the VMs. Ensure that the DNS service is also available from your host system!
 
 Om de test uit te voeren moet je dus de volgende commando uitvoeren: `sudo /vagrant/test/runbats.sh`
+
+### Test met 'dig'
+1. Log in op pu001 met de commando `vagrant ssh pu001` via de terminal
+2. Geef de volgende commando in en druk op enter: `dig @192.0.2.11 ns1.avalon.lan +short`. Je moet als uitvoer de naam van de dns server (niet de slave dns server) en de ip-adres te zien krijgen.
+3. Voer daarna de volgende commando uit: `dig @192.0.2.11 avalon.lan www.avalon.lan +short`. Je moet als uitvoer de naam van de LAMP server  en de ip-adres ervan te zien krijgen.
+4. Open een nieuwe terminal en log in op pu002 met de commando `vagrant ssh pu002`.
+5. Geef de volgende commando in en druk op enter: `dig @192.0.2.10 ns1.avalon.lan +short`. Je moet als uitvoer de naam van de dns server (niet de slave dns server) en de ip-adres te zien krijgen.
+6. Voer daarna de volgende commando uit: `dig @192.0.2.10 avalon.lan www.avalon.lan +short`. Je moet als uitvoer de naam van de LAMP server  en de ip-adres ervan te zien krijgen.
+
 
 ## Procedure/Documentation
 ### DNS Server
@@ -163,7 +173,8 @@ rhbase_firewall_allow_services:
 7. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant up` en daarna `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
 8. Nadat de installatie voltooid is, voer je de commando `vagrant ssh pu002` uit. Dankzij dit commando log je in, in het dns server. Na het inloggen voer je de commando `sudo /vagrant/test/runbats.sh` uit om de test van de server te starten. Indien alle testen slagen, is alles goed geconfigureerd en werkt de dns server zonder problemen.
 ## Test report
-### DNS Server
+### Test script
+#### DNS Server
 
 Na het uitvoeren van de test, krijg ik als uitvoer: 
 ```
@@ -199,7 +210,7 @@ Running test /vagrant/test/pu001/masterdns.bats
 ```
 We kunnen dus concluderen dat alles goed geconfigureerd is en goed werkt.
 
-### Slave DNS Server
+#### Slave DNS Server
 Na het uitvoeren van de test, krijg ik als uitvoer: 
 
 ```
@@ -236,6 +247,26 @@ Running test /vagrant/test/pu002/slavedns.bats
 ```
 We kunnen dus concluderen dat alles goed geconfigureerd is en goed werkt.
 
+### Test met dig
+#### DNS server
+```
+[vagrant@pu001 ~]$ dig @192.0.2.11 ns1.avalon.lan +short
+pu001.avalon.lan.
+192.0.2.10
+[vagrant@pu001 ~]$ dig @192.0.2.11 avalon.lan www.avalon.lan +short
+pu004.avalon.lan.
+192.0.2.50
+```
+
+#### Slave DNS server
+```
+[vagrant@pu002 ~]$ dig @192.0.2.10 ns1.avalon.lan +short
+pu001.avalon.lan.
+192.0.2.10
+[vagrant@pu002 ~]$ dig @192.0.2.10 avalon.lan www.avalon.lan +short
+pu004.avalon.lan.
+192.0.2.50
+```
 ## Resources
 1. https://github.com/hilmiemrebayat/elnx-sme/blob/master/doc/02-dns.md
 2. https://galaxy.ansible.com/bertvv/bind/
