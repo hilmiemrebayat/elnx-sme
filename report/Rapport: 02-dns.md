@@ -200,6 +200,41 @@ Running test /vagrant/test/pu001/masterdns.bats
 We kunnen dus concluderen dat alles goed geconfigureerd is en goed werkt.
 
 ### Slave DNS Server
+Na het uitvoeren van de test, krijg ik als uitvoer: 
+
+```
+Running test /vagrant/test/common.bats
+ ✓ EPEL repository should be available
+ ✓ Bash-completion should have been installed
+ ✓ bind-utils should have been installed
+ ✓ Git should have been installed
+ ✓ Nano should have been installed
+ ✓ Tree should have been installed
+ ✓ Vim-enhanced should have been installed
+ ✓ Wget should have been installed
+ ✓ Admin user hilmi should exist
+ ✓ Custom /etc/motd should have been installed
+
+10 tests, 0 failures
+Running test /vagrant/test/pu002/slavedns.bats
+ ✓ The `dig` command should be installed
+ ✓ The main config file should be syntactically correct
+ ✓ The server should be set up as a slave
+ ✓ The server should forward requests to the master server
+ ✓ There should not be a forward zone file
+ ✓ The service should be running
+ ✓ Forward lookups public servers
+ ✓ Forward lookups private servers
+ ✓ Reverse lookups public servers
+ ✓ Reverse lookups private servers
+ ✓ Alias lookups public servers
+ ✓ Alias lookups private servers
+ ✓ NS record lookup
+ ✓ Mail server lookup
+
+14 tests, 0 failures
+```
+We kunnen dus concluderen dat alles goed geconfigureerd is en goed werkt.
 
 ## Resources
 1. https://github.com/hilmiemrebayat/elnx-sme/blob/master/doc/02-dns.md
