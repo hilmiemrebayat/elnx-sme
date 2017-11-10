@@ -21,3 +21,8 @@
   roles:
     - bertvv.rh-base
     - bertvv.bind
+- hosts: pu002
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
