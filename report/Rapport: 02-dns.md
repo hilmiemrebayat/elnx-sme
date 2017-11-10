@@ -113,6 +113,24 @@ rhbase_firewall_allow_services:
 
 ### Slave DNS Server
 
+1. Voeg de volgende code toe aan de document vagrant-hosts.yml: 
+```Yaml
+- name: pu002
+  ip: 192.0.2.11
+```
+   Dit code komt onder pu004. Dankzij dit code laten we vagrant een server aanmaken met de naam pu002 en ip adres 192.0.2.11.
+   
+3. Voeg de volgende code toe aan site.yml, zodat de host aangemaakt en de roles "rh-base" (zorgt ervoor dat de basis installatie uitgevoerd wordt op de server) en "bind" (configureerd de server als DNS server) geïnstalleerd worden op de server pu002.
+```Yaml
+- hosts: pu002
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
+```
+4. Open de terminal, ga met 'cd <pad van bestand(en)>' naar de map waar je de vagrant file terug kan vinden en voer de commando `vagrant up` en daarna `vagrant provision` uit zodat de server geïnstalleerd wordt.
+5. Nadat de installatie voltooid is zien we dat de installatie van role "bind" niet lukt. Dit komt omdat we de minimale vereisten van voor de dns server niet hebben meegegeven. Hierdoor gaan we de DNS Server eerst congigureren en daarna laten installeren. Om dit te doen maak je eerst in het map Ansible -> host_vars een bestand genaamd "pu002.yml" aan. Dankzij dit bestand kunnen we DNS Server configureren.
+
 ## Test report
 ### DNS Server
 
