@@ -108,7 +108,7 @@ bind_zone_mail_servers:
 rhbase_firewall_allow_services:
   - dns
 ```
-9. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant up` en daarna  `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
+9. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
 10. Nadat de installatie voltooid is, voer je de commando `vagrant ssh pu001` uit. Dankzij dit commando log je in, in het dns server. Na het inloggen voer je de commando `sudo /vagrant/test/runbats.sh` uit om de test van de server te starten. Indien alle testen slagen, is alles goed geconfigureerd en werkt de dns server zonder problemen.
 
 ### Slave DNS Server
@@ -160,7 +160,7 @@ bind_allow_query:
 rhbase_firewall_allow_services:
   - dns
 ```
-7. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
+7. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant up` en daarna `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
 8. Nadat de installatie voltooid is, voer je de commando `vagrant ssh pu002` uit. Dankzij dit commando log je in, in het dns server. Na het inloggen voer je de commando `sudo /vagrant/test/runbats.sh` uit om de test van de server te starten. Indien alle testen slagen, is alles goed geconfigureerd en werkt de dns server zonder problemen.
 ## Test report
 ### DNS Server
