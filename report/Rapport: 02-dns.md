@@ -44,7 +44,7 @@ bind_zone_networks:
   - "172.16"
 
 ```
-  Nadat je de bovenstaande code hebt toegevoegd, open je terminal en doe `vagrant provision`. Nu zal de dns server voor een deel geconfigureerd worden.
+  Nadat je de bovenstaande code hebt toegevoegd, open je de terminal en doe je `vagrant provision`. Nu zal de dns server voor een deel geconfigureerd worden.
 
 ## Test report
 
