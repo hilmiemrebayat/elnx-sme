@@ -93,7 +93,7 @@ bind_listen_ipv4:
   - any
   
 #Hier geef je mee welke servers toegang hebben tot de DNS server. In ons geval hebben alle servers toegang.
-bind_allow_query
+bind_allow_query:
   - any
 ```
 7. Nadat we de basis configuratie hebben uitgevoerd moeten we de mx record point voor de mail server configureren. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
