@@ -13,6 +13,7 @@ Both servers can be validated with the test scripts. Execute `sudo /vagrant/test
 Om de test uit te voeren moet je dus de volgende commando uitvoeren: `sudo /vagrant/test/runbats.sh`
 
 ## Procedure/Documentation
+### DNS Server
 1. Downloaden en installeren van bertvv.bind met de volgende commando: `ansible-galaxy install bertvv.bind`. Dankzij dit role is het mogelijk om een DNS server op te zetten.
 2. Voeg de volgende code toe aan de document vagrant-hosts.yml: 
 ```Yaml
@@ -109,7 +110,12 @@ rhbase_firewall_allow_services:
 ```
 9. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
 10. Nadat de installatie voltooid is, voer je de commando `vagrant ssh pu001` uit. Dankzij dit commando log je in, in het dns server. Na het inloggen voer je de commando `sudo /vagrant/test/runbats.sh` uit om de test van de server te starten. Indien alle testen slagen, is alles goed geconfigureerd en werkt de dns server zonder problemen.
+
+### Slave DNS Server
+
 ## Test report
+### DNS Server
+
 Na het uitvoeren van de test, krijg ik als uitvoer: 
 ```
 Running test /vagrant/test/common.bats
@@ -143,6 +149,9 @@ Running test /vagrant/test/pu001/masterdns.bats
 13 tests, 0 failures
 ```
 We kunnen dus concluderen dat alles goed geconfigureerd is en goed werkt.
+
+### Slave DNS Server
+
 ## Resources
 1. https://github.com/hilmiemrebayat/elnx-sme/blob/master/doc/02-dns.md
 2. https://galaxy.ansible.com/bertvv/bind/
