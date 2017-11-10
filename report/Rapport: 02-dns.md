@@ -102,7 +102,49 @@ bind_zone_mail_servers:
   - name: pu003
     preference: 10
 ```
- 
+8. Als laatst gaan we de firewall configureren. Dit doen we gemakkelijk door de volgende code toe te voegen aan "pu00A.yml"
+```Yaml
+rhbase_firewall_allow_services:
+  - dns
+```
+9. Indien je alle bovenstaande stappen hebt uitgevoerd, open je de terminal en voer je de comando `vagrant provision` uit. Nu zal alles geïnstalleerd en geconfigureerd worden.
+10. Nadat de installatie voltooid is, voer je de commando `vagrant ssh pu001` uit. Dankzij dit commando log je in, in het dns server. Na het inloggen voer je de commando `sudo /vagrant/test/runbats.sh` uit om de test van de server te starten. Indien alle testen slagen, is alles goed geconfigureerd en werkt de dns server zonder problemen.
 ## Test report
+Na het uitvoeren van de test, krijg ik als uitvoer: 
+```
+Running test /vagrant/test/common.bats
+ ✓ EPEL repository should be available
+ ✓ Bash-completion should have been installed
+ ✓ bind-utils should have been installed
+ ✓ Git should have been installed
+ ✓ Nano should have been installed
+ ✓ Tree should have been installed
+ ✓ Vim-enhanced should have been installed
+ ✓ Wget should have been installed
+ ✓ Admin user hilmi should exist
+ ✓ Custom /etc/motd should have been installed
 
+10 tests, 0 failures
+Running test /vagrant/test/pu001/masterdns.bats
+ ✓ The `dig` command should be installed
+ ✓ The main config file should be syntactically correct
+ ✓ The forward zone file should be syntactically correct
+ ✓ The reverse zone files should be syntactically correct
+ ✓ The service should be running
+ ✓ Forward lookups public servers
+ ✓ Forward lookups private servers
+ ✓ Reverse lookups public servers
+ ✓ Reverse lookups private servers
+ ✓ Alias lookups public servers
+ ✓ Alias lookups private servers
+ ✓ NS record lookup
+ ✓ Mail server lookup
+
+13 tests, 0 failures
+```
+We kunnen dus concluderen dat alles goed geconfigureerd is en goed werkt.
 ## Resources
+1. https://github.com/hilmiemrebayat/elnx-sme/blob/master/doc/02-dns.md
+2. https://galaxy.ansible.com/bertvv/bind/
+3. https://github.com/hilmiemrebayat/elnx-sme/blob/master/README.md
+4. https://galaxy.ansible.com/bertvv/rh-base/
