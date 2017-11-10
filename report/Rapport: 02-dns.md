@@ -45,6 +45,50 @@ bind_zone_networks:
 
 ```
   Nadat je de bovenstaande code hebt toegevoegd, open je de terminal en doe je `vagrant provision`. Nu zal de dns server voor een deel geconfigureerd worden.
+ 
+8. Nu gaan we de reserve en lookup lookup zones configureren van elk server. Dit doe je door de volgende code toe te voegen aan "pu001.yml":
+
+```Yaml
+bind_zone_hosts:
+  - name: r001
+    ip: 192.0.2.254
+    aliases:
+      - gw
+  - name: pu001
+    ip: 192.0.2.10
+    aliases:
+      - ns1
+  - name: pu002
+    ip: 192.0.2.11
+    aliases:
+      - ns2
+  - name: pu003
+    ip: 192.0.2.20
+    aliases:
+      - mail
+  - name: pu004
+    ip: 192.0.2.50
+    aliases:
+      - www
+  - name: pr001
+    ip: 172.16.0.2
+    aliases:
+      - dhcp
+  - name: pr002
+    ip: 172.16.0.3
+    aliases:
+      - directory
+  - name: pr010
+    ip: 172.16.0.10
+    aliases:
+      - inside
+  - name: pr011
+    ip: 172.16.0.11
+    aliases:
+      - files
+
+```
+
 
 ## Test report
 
