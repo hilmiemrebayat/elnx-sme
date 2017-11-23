@@ -230,3 +230,4 @@ samba_users:
 4. https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/managing_confined_services/sect-managing_confined_services-configuration_examples-sharing_files_between_services
 5. https://galaxy.ansible.com/bertvv/rh-base/
 6. https://www.mkpasswd.net/index.php
+7. https://galaxy.ansible.com/bertvv/vsftpd/
