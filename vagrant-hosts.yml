@@ -31,5 +31,3 @@
   ip: 192.0.2.10
 - name: pu002
   ip: 192.0.2.11
-- name: monitoring
-  ip: 192.0.2.12
