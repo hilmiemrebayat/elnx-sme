@@ -219,6 +219,7 @@ samba_users:
     password: stefaanv
 
 ```
+8. Voer 'vagrant provision' uit via de terminal zodat de samba server geconfigureerd wordt.
 
 ## Test report
 
