@@ -56,14 +56,19 @@ samba_netbios_name: files
 #Configureren van gebruikersmap voor elk gebruikers
 samba_load_homes: true
 
-
+samba_shares:
+- name: management
+comment: ''
+write_list: +management
+valid_users: +management
+group: management
+directory_mode: "0770"
 
 ```
 
 ## Test report
 
 ## Resources
-1. https://github.com/hilmiemrebayat/elnx-sme/blob/master/doc/02-dns.md
-2. https://galaxy.ansible.com/bertvv/bind/
-3. https://github.com/hilmiemrebayat/elnx-sme/blob/master/README.md
-4. https://galaxy.ansible.com/bertvv/rh-base/
+1. https://galaxy.ansible.com/bertvv/samba/
+2. https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html
+3. http://permissions-calculator.org
