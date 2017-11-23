@@ -39,8 +39,10 @@ roles:
 - bertvv.samba
 - bertvv.vsftpd
 ```
-6. Voer 'vagrant provision' uit met de terminal zodat de rollen geïnstalleerd worden op de server.
-
+6. Voer 'vagrant provision' uit met de terminal zodat de rollen geïnstalleerd en geconfigureerd worden op de server.
+7. Nadat alle stappen hierboven uitgevoerd zijn, gaan we de samba fileserver configureren. Dit doe je door de volgende code's toe te voegen in het file pr011.yml:
+```
+```
 
 ## Test report
 
