@@ -11,3 +11,23 @@ samba_shares:
     valid_users: +management
     group: management
     directory_mode: "0770"
+  - name: technical (software development)
+    comment: ''
+    write_list: +technical
+    valid_users: +technical
+    group: technical
+  - name: sales
+    comment: ''
+    write_list: +sales
+    valid_users: +sales
+    group: sales
+  - name: it (system administration)
+    comment: ''
+    write_list: +it
+    valid_users: +it
+    group: it
+  - name: public
+    comment: ''
+    write_list: +public
+    valid_users: +public
+    group: public
