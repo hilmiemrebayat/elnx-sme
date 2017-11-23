@@ -92,6 +92,97 @@ samba_shares:
     write_list: +users
     valid_users: +users
     setype: samba_share_t
+    
+#Gebruikers aanmaken
+rhbase_users:
+  - name: hilmiemrebayat
+    comment: 'Hilmi Emre Bayat'
+    groups:
+      - it
+      - users
+      - wheel
+    password: $1$gKAWQfBg$yewS5QbaohXB7iZk2P0T7.
+    shell: /bin/bash
+  - name: stevenh
+    comment: 'Steven Hermans'
+    groups:
+      - management
+      - users
+    password: $1$Vy3cB8iE$HVbFHLIOEQQRJ469i1GS/.
+  - name: stevenv
+    comment: 'Steven Van Daele'
+    groups:
+      - technical
+      - users
+    password: $1$xzX1RLnU$KvIIJ4F3OadUqiLRpunG9/
+  - name: leend
+    comment: 'Leen De Meester'
+    groups:
+      - technical
+      - users
+    password: $1$3W7/vvOc$pjmWAHK36Wa36BeqOZV8B0
+  - name: svena
+    comment: 'Sven Aerens'
+    groups:
+      - sales
+      - users
+    password: $1$C0mSTPaQ$k/W6AH7O/nN17Fp58RXs50
+  - name: nehirb
+    comment: 'Nehir Baayar'
+    groups:
+      - it
+      - users
+    password: $1$0NP6tmlz$T5X0xMjrGYwr5Rozr1cAo.
+  - name: alexanderd
+    comment: 'Alexander De Coninck'
+    groups:
+      - technical
+      - users
+    password: $1$tIuyQqOK$LriOgQ3SsrVY3DxcXNKRO.
+  - name: krisv
+    comment: 'Kris Vanhavrbeke'
+    groups:
+      - management
+      - users
+    password: $1$HRUhSVNO$BxeYnERhwZrNg5QPEJQwW0
+  - name: benoitp
+    comment: 'Benoit Pluquet'
+    groups:
+      - sales
+      - users
+    password: $1$67zwncnI$i/OiL4MzItFG0fs/qCEO1/
+  - name: anc
+    comment: 'An Coppens'
+    groups:
+      - technical
+      - users
+    password: $1$f/SZqeA6$4BQsj25md68p6OK1NkPS5/
+  - name: elenaa
+    comment: 'Elena Andreev'
+    groups:
+      - management
+      - users
+    password: $1$1UWg/P4T$9yISTY1x4LiqzbDLOFR8y0
+  - name: evyt
+    comment: 'Evy Tileman'
+    groups:
+      - technical
+      - users
+    password: $1$eXmADiC9$RK92PuP1a9M.RhlQCwwrL/
+  - name: christophev
+    comment: 'Christophe Van der Meersche'
+    groups:
+      - it
+      - users
+    password: $1$2Og0dziu$gyBbo8.b8QS/zgUoybx9C0
+    shell: /bin/bash
+  - name: stefaanv
+    comment: 'Stefaan Vernimmen'
+    groups:
+      - technical
+      - users
+    password: $1$sdEl3gnb$CzZrYalXHOr3rEQZ.Lh5C1
+
 ```
 
 ## Test report
