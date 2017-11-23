@@ -160,3 +160,6 @@ samba_users:
     password: christophev
   - name: stefaanv
     password: stefaanv
+
+vsftpd_anonymous_enable: false
+vsftpd_listen: true
