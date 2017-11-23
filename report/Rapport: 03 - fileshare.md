@@ -101,3 +101,4 @@ samba_shares:
 1. https://galaxy.ansible.com/bertvv/samba/
 2. https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html
 3. http://permissions-calculator.org
+4. https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/managing_confined_services/sect-managing_confined_services-configuration_examples-sharing_files_between_services
