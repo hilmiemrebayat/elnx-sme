@@ -92,7 +92,6 @@ samba_shares:
     write_list: +users
     valid_users: +users
     setype: samba_share_t
-
 ```
 
 ## Test report
