@@ -10,6 +10,9 @@
 
 ## Test plan
 
+For testing purposes, the users have a password that is identical to their name. Adapt the variables at the beginning of the script, if necessary (particularly admin_user and admin_password).
+
+Currently, most test cases are skipped, because failing tests will probably timeout which takes a lot of time. Remove the lines with the command skip at the beginning of a test case to execute it.
 
 
 ## Procedure/Documentation
