@@ -18,7 +18,7 @@ Currently, most test cases are skipped, because failing tests will probably time
 ## Procedure/Documentation
 
 1. Pas vagrant-host.yml file aan door de volgende code onderaan toe te voegen. Hiermee wordt de file server met naam pr011,  ip-adres 172.16.0.11 en netmask 255.255.0.0 aangemaakt in het VM:
-```
+```Yaml
 - name: pr011
   ip: 172.16.0.11
   netmask: 255.255.0.0
@@ -31,7 +31,7 @@ $ ansible-galaxy install bertvv.samba
 $ ansible-galaxy install bertvv.vsftpd
 ```
 5. Pas de file site.yml aan en voeg de volgende code onderaan toe zodat de basis configuratie van de server gebeurt en de rollen geïnstalleerd worden(bertvv.rh-base, bertvv.samba, bertvv.vsftpd)
-```
+```Yaml
 - hosts: pr011
   sudo: true
   roles:
@@ -41,7 +41,7 @@ $ ansible-galaxy install bertvv.vsftpd
 ```
 6. Voer 'vagrant provision' uit met de terminal zodat de rollen geïnstalleerd en geconfigureerd worden op de server.
 7. Nadat alle stappen hierboven uitgevoerd zijn, gaan we de samba fileserver configureren. Dit doe je door de volgende code's toe te voegen in het file pr011.yml:
-```
+```Yaml
 #Configuratie van de firewall
 rhbase_firewall_allow_services:
   - samba
