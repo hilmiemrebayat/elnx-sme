@@ -63,6 +63,7 @@ rhbase_user_groups:
   - sales
   - it
 
+#Groepen configureren
 samba_shares:
   - name: management
     comment: ''
