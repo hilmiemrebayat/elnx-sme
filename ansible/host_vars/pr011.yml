@@ -49,7 +49,7 @@ rhbase_users:
       - it
       - users
       - wheel
-    password: $1$mMxE8dRG$Y9phRhDspuV5..zQivoMy.
+    password: $1$mMxE8dRG$Y9phRhDspuV5..zQivoMy.s
     shell: /bin/bash
   - name: stevenh
     comment: 'Steven Hermans'
