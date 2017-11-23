@@ -24,6 +24,8 @@ ip: 172.16.0.11
 netmask: 255.255.0.0
 ```
 2. Open daarna de terminal, ga met `cd` naar de map waarin de vagrantfile zit en doe `vagrant up` zodat de server wordt aangemaakt.
+3. Maak een file pr011.yml aan in de map host_vars zodat de server configureerbaar wordt met ansible.
+
 
 ## Test report
 
