@@ -42,6 +42,10 @@ roles:
 6. Voer 'vagrant provision' uit met de terminal zodat de rollen geïnstalleerd en geconfigureerd worden op de server.
 7. Nadat alle stappen hierboven uitgevoerd zijn, gaan we de samba fileserver configureren. Dit doe je door de volgende code's toe te voegen in het file pr011.yml:
 ```
+#Configuratie van de firewall
+rhbase_firewall_allow_services:
+- samba
+- ftp
 ```
 
 ## Test report
