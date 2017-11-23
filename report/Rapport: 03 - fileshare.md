@@ -53,6 +53,11 @@ samba_load_printers:
 #Bios naam van de server configureren
 samba_netbios_name: files
 
+#Configureren van gebruikersmap voor elk gebruikers
+samba_load_homes: true
+
+
+
 ```
 
 ## Test report
