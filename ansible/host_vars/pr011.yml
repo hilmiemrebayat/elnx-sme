@@ -21,20 +21,21 @@ samba_shares:
   - name: technical (software development)
     comment: ''
     write_list: +technical
-    valid_users: +technical
+    valid_users: +technical,+management,+sales,+it
     group: technical
   - name: sales
     comment: ''
     write_list: +sales
-    valid_users: +sales
+    valid_users: +sales,+management
     group: sales
   - name: it (system administration)
     comment: ''
     write_list: +it
-    valid_users: +it
+    valid_users: +it,+management
     group: it
   - name: public
     comment: ''
-    write_list: +public
-    valid_users: +public
-    group: public
+    public: yes
+    write_list: +users
+    valid_users: +users
+    setype: samba_share_t
