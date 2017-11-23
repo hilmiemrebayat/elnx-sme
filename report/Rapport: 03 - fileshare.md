@@ -39,6 +39,8 @@ roles:
 - bertvv.samba
 - bertvv.vsftpd
 ```
+6. Voer 'vagrant provision' uit met de terminal zodat de rollen geïnstalleerd worden op de server.
+
 
 ## Test report
 
