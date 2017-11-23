@@ -20,8 +20,8 @@ Currently, most test cases are skipped, because failing tests will probably time
 1. Pas vagrant-host.yml file aan door de volgende code onderaan toe te voegen. Hiermee wordt de file server met naam pr011,  ip-adres 172.16.0.11 en netmask 255.255.0.0 aangemaakt in het VM:
 ```
 - name: pr011
-ip: 172.16.0.11
-netmask: 255.255.0.0
+  ip: 172.16.0.11
+  netmask: 255.255.0.0
 ```
 2. Open daarna de terminal, ga met `cd` naar de map waarin de vagrantfile zit en doe `vagrant up` zodat de server wordt aangemaakt.
 3. Maak een file pr011.yml aan in de map host_vars zodat de server configureerbaar wordt met ansible.
@@ -33,22 +33,22 @@ $ ansible-galaxy install bertvv.vsftpd
 5. Pas de file site.yml aan en voeg de volgende code onderaan toe zodat de basis configuratie van de server gebeurt en de rollen geïnstalleerd worden(bertvv.rh-base, bertvv.samba, bertvv.vsftpd)
 ```
 - hosts: pr011
-sudo: true
-roles:
-- bertvv.rh-base
-- bertvv.samba
-- bertvv.vsftpd
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.samba
+    - bertvv.vsftpd
 ```
 6. Voer 'vagrant provision' uit met de terminal zodat de rollen geïnstalleerd en geconfigureerd worden op de server.
 7. Nadat alle stappen hierboven uitgevoerd zijn, gaan we de samba fileserver configureren. Dit doe je door de volgende code's toe te voegen in het file pr011.yml:
 ```
 #Configuratie van de firewall
 rhbase_firewall_allow_services:
-- samba
-- ftp
+  - samba
+  - ftp
 #Printer delen uitschakelen
 samba_load_printers:
-- false
+  - false
 
 #Bios naam van de server configureren
 samba_netbios_name: files
@@ -58,18 +58,39 @@ samba_load_homes: true
 
 #Groepen aanmaken
 rhbase_user_groups:
-- management
-- technical
-- sales
-- it
+  - management
+  - technical
+  - sales
+  - it
 
 samba_shares:
-- name: management
-comment: ''
-write_list: +management
-valid_users: +management
-group: management
-directory_mode: "0770"
+  - name: management
+    comment: ''
+    write_list: +management
+    valid_users: +management
+    group: management
+    directory_mode: "0770"
+  - name: technical (software development)
+    comment: ''
+    write_list: +technical
+    valid_users: +technical,+management,+sales,+it
+    group: technical
+  - name: sales
+    comment: ''
+    write_list: +sales
+    valid_users: +sales,+management
+    group: sales
+  - name: it (system administration)
+    comment: ''
+    write_list: +it
+    valid_users: +it,+management
+    group: it
+  - name: public
+    comment: ''
+    public: yes
+    write_list: +users
+    valid_users: +users
+    setype: samba_share_t
 
 ```
 
