@@ -162,4 +162,3 @@ samba_users:
     password: stefaanv
 
 vsftpd_anonymous_enable: false
-vsftpd_listen: true
