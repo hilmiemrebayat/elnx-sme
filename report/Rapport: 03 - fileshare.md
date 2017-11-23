@@ -17,6 +17,13 @@ Currently, most test cases are skipped, because failing tests will probably time
 
 ## Procedure/Documentation
 
+1. Pas vagrant-host.yml file aan door de volgende code onderaan toe te voegen. Hiermee wordt de file server met naam pr011,  ip-adres 172.16.0.11 en netmask 255.255.0.0 aangemaakt in het VM:
+```
+- name: pr011
+ip: 172.16.0.11
+netmask: 255.255.0.0
+```
+
 ## Test report
 
 ## Resources
