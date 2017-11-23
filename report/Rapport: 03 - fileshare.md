@@ -25,7 +25,20 @@ netmask: 255.255.0.0
 ```
 2. Open daarna de terminal, ga met `cd` naar de map waarin de vagrantfile zit en doe `vagrant up` zodat de server wordt aangemaakt.
 3. Maak een file pr011.yml aan in de map host_vars zodat de server configureerbaar wordt met ansible.
-
+4. Installeer de rollen bertvv.samba en bertvv.vsftpd met de volgende code via de terminal, zodat we de server kunnen configureren als file en ftp server
+```
+$ ansible-galaxy install bertvv.samba
+$ ansible-galaxy install bertvv.vsftpd
+```
+5. Pas de file site.yml aan en voeg de volgende code onderaan toe zodat de basis configuratie van de server gebeurt en de rollen geïnstalleerd worden(bertvv.rh-base, bertvv.samba, bertvv.vsftpd)
+```
+- hosts: pr011
+sudo: true
+roles:
+- bertvv.rh-base
+- bertvv.samba
+- bertvv.vsftpd
+```
 
 ## Test report
 
