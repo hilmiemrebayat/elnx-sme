@@ -1,3 +1,5 @@
 rhbase_firewall_allow_services:
   - samba
   - ftp
+samba_load_printers:
+  - false

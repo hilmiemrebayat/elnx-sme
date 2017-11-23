@@ -46,6 +46,11 @@ roles:
 rhbase_firewall_allow_services:
 - samba
 - ftp
+#Printer delen uitschakelen
+samba_load_printers:
+- false
+
+
 ```
 
 ## Test report
