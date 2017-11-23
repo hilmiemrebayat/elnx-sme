@@ -102,7 +102,7 @@ rhbase_users:
       - it
       - users
       - wheel
-    password: $1$gKAWQfBg$yewS5QbaohXB7iZk2P0T7.
+    password: $1$mMxE8dRG$Y9phRhDspuV5..zQivoMy.s
     shell: /bin/bash
   - name: stevenh
     comment: 'Steven Hermans'
@@ -183,6 +183,40 @@ rhbase_users:
       - technical
       - users
     password: $1$sdEl3gnb$CzZrYalXHOr3rEQZ.Lh5C1
+    
+#workgroup definiëren
+samba_workgroup: avalon
+
+#gebruikers met wachtwoord maken voor samba 
+samba_users:
+  - name: hilmiemrebayat
+    password: hilmiemrebayat
+  - name: stevenh
+    password: stevenh
+  - name: stevenv
+    password: stevenv
+  - name: leend
+    password: leend
+  - name: svena
+    password: svena
+  - name: nehirb
+    password: nehirb
+  - name: alexanderd
+    password: alexanderd
+  - name: krisv
+    password: krisv
+  - name: benoitp
+    password: benoitp
+  - name: anc
+    password: anc
+  - name: elenaa
+    password: elenaa
+  - name: evyt
+    password: evyt
+  - name: christophev
+    password: christophev
+  - name: stefaanv
+    password: stefaanv
 
 ```
 
