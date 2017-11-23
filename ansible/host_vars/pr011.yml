@@ -3,3 +3,4 @@ rhbase_firewall_allow_services:
   - ftp
 samba_load_printers:
   - false
+samba_netbios_name: files

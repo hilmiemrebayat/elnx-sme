@@ -50,6 +50,8 @@ rhbase_firewall_allow_services:
 samba_load_printers:
 - false
 
+#Bios naam van de server configureren
+samba_netbios_name: files
 
 ```
 
