@@ -4,6 +4,13 @@ rhbase_firewall_allow_services:
 samba_load_printers:
   - false
 samba_netbios_name: files
+
+rhbase_user_groups:
+  - management
+  - technical
+  - sales
+  - it
+
 samba_shares:
   - name: management
     comment: ''

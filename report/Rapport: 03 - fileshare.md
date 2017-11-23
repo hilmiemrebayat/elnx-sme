@@ -56,6 +56,13 @@ samba_netbios_name: files
 #Configureren van gebruikersmap voor elk gebruikers
 samba_load_homes: true
 
+#Groepen aanmaken
+rhbase_user_groups:
+- management
+- technical
+- sales
+- it
+
 samba_shares:
 - name: management
 comment: ''
