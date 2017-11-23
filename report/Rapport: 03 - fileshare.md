@@ -23,6 +23,7 @@ Currently, most test cases are skipped, because failing tests will probably time
 ip: 172.16.0.11
 netmask: 255.255.0.0
 ```
+2. Open daarna de terminal, ga met `cd` naar de map waarin de vagrantfile zit en doe `vagrant up` zodat de server wordt aangemaakt.
 
 ## Test report
 
