@@ -43,7 +43,7 @@ samba_shares:
 samba_workgroup: avalon
 
 rhbase_users:
-  - name: Hilmi Emre Bayat
+  - name: hilmiemrebayat
     comment: 'Hilmi Emre Bayat'
     groups:
       - it
