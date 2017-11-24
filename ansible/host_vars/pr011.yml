@@ -18,7 +18,7 @@ samba_shares:
     valid_users: +management
     group: management
     directory_mode: "0770"
-  - name: technical (software development)
+  - name: technical
     comment: ''
     write_list: +technical
     valid_users: +technical,+management,+sales,+it
@@ -28,7 +28,7 @@ samba_shares:
     write_list: +sales
     valid_users: +sales,+management
     group: sales
-  - name: it (system administration)
+  - name: it
     comment: ''
     write_list: +it
     valid_users: +it,+management
@@ -43,7 +43,7 @@ samba_shares:
 samba_workgroup: avalon
 
 rhbase_users:
-  - name: hilmiemrebayat
+  - name: hilmi
     comment: 'Hilmi Emre Bayat'
     groups:
       - it
@@ -161,4 +161,7 @@ samba_users:
   - name: stefaanv
     password: stefaanv
 
+
 vsftpd_anonymous_enable: false
+vsftpd_listen: true
+vsftpd_local_enable: true
