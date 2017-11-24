@@ -220,6 +220,14 @@ samba_users:
 
 ```
 8. Voer 'vagrant provision' uit via de terminal zodat de samba server geconfigureerd wordt.
+9. Nadat de configuratie van de samba fileserver is geconfigureerd, gaan we de FTP configureren. Dit doe je door de volgende code onderaan toe te voegen aan pr011.yml:
+```Yaml
+vsftpd_anonymous_enable: false
+vsftpd_listen: true
+vsftpd_local_enable: true
+
+
+```
 
 ## Test report
 
