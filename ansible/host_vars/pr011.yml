@@ -49,7 +49,7 @@ rhbase_users:
       - it
       - users
       - wheel
-    password: $1$mMxE8dRG$Y9phRhDspuV5..zQivoMy.s
+    password: $1$AwImWUq5$M.d2bIei3KRUf0T2Ju2ip1
     shell: /bin/bash
   - name: stevenh
     comment: 'Steven Hermans'
@@ -132,7 +132,7 @@ rhbase_users:
     password: $1$sdEl3gnb$CzZrYalXHOr3rEQZ.Lh5C1
 
 samba_users:
-  - name: hilmiemrebayat
+  - name: hilmi
     password: hilmiemrebayat
   - name: stevenh
     password: stevenh
@@ -165,3 +165,4 @@ samba_users:
 vsftpd_anonymous_enable: false
 vsftpd_listen: true
 vsftpd_local_enable: true
+vsftpd_local_root: /srv/shares/
