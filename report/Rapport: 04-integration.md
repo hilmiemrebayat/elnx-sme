@@ -35,6 +35,12 @@ In this assignment, the goal is to complete the network we've been building with
 ```
 4. Ga naar de map ansible -> host_vars en maak een file met als naam pr001.yml aan zodat we de server kunnen configureren.
 5. Voeg de volgende code toe in de file pr001.yml om de server te laten configureren:
+```
+#firewall configureren zodat verkeer wordt doorgelaten
+rhbase_firewall_allow_services:
+  - dhcp
+
+```
 
 ## Test report
  
