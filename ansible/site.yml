@@ -32,3 +32,8 @@
     - bertvv.rh-base
     - bertvv.samba
     - bertvv.vsftpd
+- hosts: pr001
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.dhcp
