@@ -7,3 +7,5 @@ dhcp_global_default_lease_time: 43.200
 dhcp_global_domain_name_servers:
   - 192.0.2.10
   - 192.0.2.11
+#instellen van de domeinnaam die de client moet gebruiken bij het oplossen van hostnamen
+dhcp_global_domain_name: avalon.lan
