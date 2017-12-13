@@ -1,3 +1,9 @@
 #firewall configureren zodat verkeer wordt doorgelaten
 rhbase_firewall_allow_services:
   - dhcp
+#DHCP lease time instellen
+dhcp_global_default_lease_time: 43.200
+#IP-adres van DNS Servers meegeven
+dhcp_global_domain_name_servers:
+  - 192.0.2.10
+  - 192.0.2.11
