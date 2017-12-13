@@ -9,3 +9,25 @@ dhcp_global_domain_name_servers:
   - 192.0.2.11
 #instellen van de domeinnaam die de client moet gebruiken bij het oplossen van hostnamen
 dhcp_global_domain_name: avalon.lan
+
+#IP-adres van de router instellen
+dhcp_global_routers: 172.16.255.254
+
+#Server naam instellen
+dhcp_global_server_name: pr001
+
+#scope instellen voor dhcp
+dhcp_subnets:
+  - ip: 192.168.222.0
+    netmask: 255.255.255.128
+    domain_name_servers:
+      - 10.0.2.3
+      - 10.0.2.4
+    range_begin: 192.168.222.50
+    range_end: 192.168.222.127
+  - ip: 192.168.222.128
+    default_lease_time: 3600
+    max_lease_time: 7200
+    netmask: 255.255.255.128
+    domain_name_servers: 10.0.2.3
+    routers: 192.168.222.129
