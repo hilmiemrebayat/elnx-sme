@@ -19,10 +19,10 @@ In this assignment, the goal is to complete the network we've been building with
 
 ## Procedure/Documentation
 1. Open terminal en installeer de rol bertvv.dhcp met de commando `ansible-galaxy install bertvv.dhcp`
-2. Pas de vagrant-host.yml aan door onderaan de bestand de volgende code toe te voegen. Hiermee maken we de server op het virtualbox aan met als naam pr001 en ip adres 172.16.0.2/16:
+2. Pas de vagrant-host.yml aan door onderaan de bestand de volgende code toe te voegen. Hiermee maken we de server op het virtualbox aan met als naam pr001 en ip adres 172.16.0.1/16:
 ```
 - name: pr001
-  ip: 172.16.0.2
+  ip: 172.16.0.1
   netmask: 255.255.0.0
 ```
 3. Open de file site.yml in de map ansible en voeg onderaan de volgende code toe. Hiermee voegen we de rollen rh-base en dhcp toe en kunnen we configureren:
