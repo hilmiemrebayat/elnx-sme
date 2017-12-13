@@ -228,9 +228,53 @@ vsftpd_local_enable: true
 
 
 ```
+10. Nadat de samba file geconfigureerd is gaan we de sales folder read acces geven met ACL. Tot nu toe is dat niet gelukt, na de volgende opdracht ga ik hierop terug komen. 
 
 ## Test report
+ Na het uitvoeren van de test krijg ik de volgende als uitvoer:
+ ```
+ [vagrant@pr011 ~]$ sudo /vagrant/test/runbats.sh
+Running test /vagrant/test/common.bats
+ ✓ EPEL repository should be available
+ ✓ Bash-completion should have been installed
+ ✓ bind-utils should have been installed
+ ✓ Git should have been installed
+ ✓ Nano should have been installed
+ ✓ Tree should have been installed
+ ✓ Vim-enhanced should have been installed
+ ✓ Wget should have been installed
+ ✓ Admin user hilmi should exist
+ ✓ Custom /etc/motd should have been installed
 
+10 tests, 0 failures
+Running test /vagrant/test/pr011/vsftp.bats
+ ✓ VSFTPD service should be running
+ ✓ VSFTPD service should be enabled at boot
+ ✓ The ’curl’ command should be installed
+ ✓ The SELinux status should be ‘enforcing’
+ ✓ FTP traffic should pass through the firewall
+ ✓ VSFTPD configuration should be syntactically correct
+ ✓ Anonymous user should not be able to see shares
+ ✓ read access for share ‘public’
+ ✓ write access for share ‘public’
+ ✓ read access for share ‘management’
+ ✓ write access for share ‘management’
+ ✓ read access for share ‘technical’
+ ✓ write access for share ‘technical’
+ ✗ read access for share ‘sales’
+   (from function `assert_read_access' in file /vagrant/test/pr011/vsftp.bats, line 37,
+    in test file /vagrant/test/pr011/vsftp.bats, line 245)
+     `assert_read_access     sales      elenaa        elenaa' failed
+ ✓ write access for share ‘sales’
+ ✗ read access for share ‘it’
+   (from function `assert_no_read_access' in file /vagrant/test/pr011/vsftp.bats, line 48,
+    in test file /vagrant/test/pr011/vsftp.bats, line 279)
+     `assert_no_read_access  it         benoitp       benoitp' failed
+ ✓ write access for share ‘it’
+
+17 tests, 2 failures
+
+```
 ## Resources
 1. https://galaxy.ansible.com/bertvv/samba/
 2. https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html
