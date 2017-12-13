@@ -275,6 +275,7 @@ Running test /vagrant/test/pr011/vsftp.bats
 17 tests, 2 failures
 
 ```
+De test is dus niet helemaal geslaagd. Er moet nog een ACL toegevoegd worden. Na heel wat pogingen is dat nog niet gelukt. Ik kom er terug op na het volgende opdracht.
 ## Resources
 1. https://galaxy.ansible.com/bertvv/samba/
 2. https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html
