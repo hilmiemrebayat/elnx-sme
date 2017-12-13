@@ -80,7 +80,12 @@ dhcp_hosts:
 
 
 ```
+6. Voer nu de commando 'vagrant up' uit zodat de server geïnstalleerd en geconfigureerd wordt.
+7. Nadat de installatie voltooid is, maak een VM aan om de DHCP Server te testen. Zie testplan.
 
 ## Test report
+### DHCP Server
+De DHCP server is goed geconfigureerd aangezien de twee netwerkpoorten ip-adressen krijgen zodat ze het moeten krijgen. Zie afbeelding hieronder:
+![Automatisch ip toegekend aan client pc](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/dhcp.jpeg)
  
 ## Resources
