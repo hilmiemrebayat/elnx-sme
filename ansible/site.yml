@@ -32,10 +32,17 @@
     - bertvv.rh-base
     - bertvv.samba
     - bertvv.vsftpd
-  tasks:
-   - name: Sales ACL
-     acl: path=/srv/shares/sales entity=technical,management etype=group permissions=r state=present
+- acl:
+    path: /srv/shares/sales
+    entity: technical
+    etype: group
+    permissions: r
+    state: present
 
-   - name: IT ACL
-     acl: path=/srv/shares/it entity=technical etype=group permissions=r state=present
-     acl: path=/srv/shares/sales entity=management etype=group permissions=r state=present
+#  tasks:
+#   - name: Sales ACL
+#     acl: path=/srv/shares/sales entity=technical,management etype=group permissions=r state=present
+#
+#   - name: IT ACL
+#     acl: path=/srv/shares/it entity=technical etype=group permissions=r state=present
+#     acl: path=/srv/shares/sales entity=management etype=group permissions=r state=present
