@@ -1,0 +1,3 @@
+#firewall configureren zodat verkeer wordt doorgelaten
+rhbase_firewall_allow_services:
+  - dhcp
