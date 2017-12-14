@@ -85,7 +85,7 @@ dhcp_hosts:
 7. Nadat de installatie voltooid is, maak een VM aan om de DHCP Server te testen. Zie testplan.
 ### Router
 1. Open terminal en installeer VtyOS vagrant plugin met de commando `vagrant plugin install vagrant-vyos`
-2. Open de file router-config.sh in het map scripts en voeg de volgende code toe:
+2. Open de file router-config.sh in het map scripts, voeg de volgende code toe en sla op:
 ```
 #!/bin/vbash
 source /opt/vyatta/etc/functions/script-template
@@ -162,6 +162,7 @@ sudo chown -R root:vyattacfg /opt/vyatta/config/active
 # vim: set ft=sh
 
 ```
+3. Voer nu de commando 'vagrant up' uit zodat de server geïnstalleerd en geconfigureerd wordt.
 
 
 ## Test report
