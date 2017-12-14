@@ -16,6 +16,19 @@ In this assignment, the goal is to complete the network we've been building with
 5. Check the IP addresses: one should be the reserved IP address, the other should come from the pool of dynamic addresses.
 6. Finally, this VM should be able to view the "company website" by surfing to http://www.avalon.lan in a web browser and be able to access the fileserver both through SMB and FTP.
 
+### Router
+#### Test internet
+1. Open de aangemaakte VM voor de DHCP.
+2. Open Firefox en surf naar www.avalon.lan en naar www.google.be
+3. Indien je de testpagina van de Apache server ziet en kan surfen naar Google.be werkt de router.
+#### Test FTP en SMB
+1. Open de aangemaakte VM voor de DHCP.
+2. Open Firefox en surf naar ftp://172.16.0.11
+3. Indien je een login screen krijgt en kan inloggen met bijvoorbeeld als gebruikersnaam "hilmi" en wachtwoord "hilmiemrebayat" werkt FTP.
+4. Open een nieuwe tabblad in firefox en surf naar smb://172.16.0.11
+5. Indien je de folders ziet in alles goed geconfigureerd en werkt alles.
+
+
 
 ## Procedure/Documentation
 ### DHCP Server
@@ -170,4 +183,15 @@ sudo chown -R root:vyattacfg /opt/vyatta/config/active
 De DHCP server is goed geconfigureerd aangezien de twee netwerkpoorten ip-adressen krijgen zodat ze het moeten krijgen. Zie afbeelding hieronder:
 ![Automatisch ip toegekend aan client pc](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/dhcp.jpeg)
  
+### Router 
+1. Surfen naar avalon.lan en google.be lukt.
+![Avalon.lan](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/avalon.jpeg)
+![google.be](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/google.jpeg)
+
+
+2. FTP openen en inloggen en SMB werkt/lukt ook.
+![FTP inlogscreen](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/ftp.jpeg)
+![FTP mappen](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/ftp%20ingelogd.jpeg)
+![SMB](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/smb.jpeg)
+
 ## Resources
