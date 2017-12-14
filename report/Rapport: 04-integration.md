@@ -83,7 +83,49 @@ dhcp_hosts:
 ```
 6. Voer nu de commando 'vagrant up' uit zodat de server geïnstalleerd en geconfigureerd wordt.
 7. Nadat de installatie voltooid is, maak een VM aan om de DHCP Server te testen. Zie testplan.
+### Router
+1. Open terminal en installeer VtyOS vagrant plugin met de commando `vagrant plugin install vagrant-vyos`
+2. Log daarna met SSH via de terminal in de router. Commando `vagrant ssh router`
+3. Geef de commando `configure` in om de router te kunnen configureren.
+4. Wijzig de naam van de server, configureer de domein naam en de poort voor ssh met de volgende commando's:
+```
+set system host-name r001
+set service ssh port 22
+set system domain-name avalon.Lan
 
+```
+5. Geef de commando `configure` in om de router te kunnen configureren.
+6. Configureer de interfaces eth0 als DHCP en geef de naam 'WAN Link' met de volgende commando's:`set interfaces ethernet eth0 address dhcp` en `set interfaces ethernet eth0 description WANLink`. Bij het uitvoeren van de erste commando krijg je als uitvoer dat het al zo is geconfigureerd.
+7. Configureer de interfaces eth1 met ip-adres 192.0.2.254/24 en als naam DMZ. Dit doe je met de commando's `set interfaces ethernet eth1 address 192.0.2.254/24` en `set interfaces ethernet eth1 description DMZ`.
+8. Configureer de interfaces eth2 met ip-adres 172.16.255.254/16 en als naam internal. Dit doe je met de commando's `set interfaces ethernet eth1 address 172.16.255.254/16` en `set interfaces ethernet eth1 description internal`.
+9. Nu stellen we Forwarding DNS in met de volgende commando's:
+```
+set service dns forwarding domain avalon.lan server 192.0.2.10
+set service dns forwarding name-server 10.0.2.3
+set service dns forwarding listen-on 'eth1'
+set service dns forwarding listen-on 'eth2' 
+```
+10.Configureer NAT voor het interne netwerk op eth1. Dit doe je met de volgende commando's:
+```
+set nat source rule 100 outbound-interface 'eth1'
+set nat source rule 100 source address '172.16.0.0/16'
+set nat source rule 100 translation address 'masquerade'
+```
+11.Configureer NAT voor het uitgaande netwerk op eth0. Dit doe je met de volgende commando's:
+```
+set nat source rule 200 outbound-interface 'eth0'
+set nat source rule 200 source address '172.16.0.0/16'
+set nat source rule 200 translation address 'masquerade'
+```
+12. Als laatst gaan we de NTP instellingen configureren. De oude NTP servers moeten verwijderd worden en de NTP servers van belgië moeten toegevoegd worden.
+``` 
+delete system ntp server 0.pool.ntp.org
+delete system ntp server 1.pool.ntp.org
+delete system ntp server 2.pool.ntp.org
+set system ntp server 'be.pool.ntp.org'
+set system time-zone Europe/Brussels
+```
+13. Geef daarna de commando `commit` en daarna `save`in zodat alles wordt geconfigureerd en opgeslagen.
 ## Test report
 ### DHCP Server
 De DHCP server is goed geconfigureerd aangezien de twee netwerkpoorten ip-adressen krijgen zodat ze het moeten krijgen. Zie afbeelding hieronder:
