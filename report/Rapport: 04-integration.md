@@ -195,3 +195,9 @@ De DHCP server is goed geconfigureerd aangezien de twee netwerkpoorten ip-adress
 ![SMB](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/smb.jpeg)
 
 ## Resources
+1. https://galaxy.ansible.com/bertvv/dhcp/
+2. https://wiki.vyos.net/wiki/User_Guide
+3. https://wiki.vyos.net/wiki/Basic_setup
+4. https://www.youtube.com/watch?v=mX_KIrSb6mE
+5. https://www.youtube.com/watch?v=S1bJpsS27Qk
+6. https://www.youtube.com/watch?v=bfQWY3XY3SI
