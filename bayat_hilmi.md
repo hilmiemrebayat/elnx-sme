@@ -1,7 +1,7 @@
 # Evaluatie Enterprise Linux
 
-| :---          | :---                                         |
-|  Student     | Hilmi BAYAT                                  |
+| ---:          | ---:                                         |
+| i Student     | Hilmi BAYAT                                  |
 | Klasgroep     | gent                                         |
 | Email         | <mailto:hilmi.bayat.v5278@student.hogent.be> |
 | Hoofdopdracht | SME                                          |
