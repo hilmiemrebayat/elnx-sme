@@ -8,7 +8,7 @@
 ## Test plan
 1. Na de installatie surf je via uw eigen pc of via een nieuw aangemaakte VM naar http://192.0.2.50/wordpress 
 2. Vul daarna de gevraagde aspecten in (Website naam, gebruikersnaam en wachtwoord)
-3. Probeer daarna met de aangemaakte account en wachtwoord in te loggen.
+3. Probeer daarna met de aangemaakte account en wachtwoord in te loggen via de link http://192.0.2.50/wordpress/wp-admin
 4. Als dat gelukt is, log uit en probeer een aantal keren verkeerd in te loggen.
 5. Open daarna je terminal en geef de commando `vagrant ssh pu004` in.
 6. Geef daarna de commando `sudo cat /var/log/messages` in. Je zal een gelijkaardige uitvoer als hieronder moeten zien:
