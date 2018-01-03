@@ -22,7 +22,7 @@ Jan  3 11:55:10 localhost wordpress(192.0.2.50)[13697]: Authentication attempt f
 Jan  3 11:55:19 localhost wordpress(192.0.2.50)[12375]: Authentication attempt for unknown user egregerg from 192.0.2.1
 
 ```
-7. Normaal gezien wordt de ip-adres automatisch geblokkeerd na meerdere pogingen. Wij gaan het manueel blokkeren om het te kunnen simuleren.Dit doen we door de commando 'sudo fail2ban-client set wordpress banip 192.0.2.1' in te geven. De ip-adres dat in de commando staat komt uit de log bestand.
+7. Normaal gezien wordt de ip-adres automatisch geblokkeerd na meerdere pogingen. Wij gaan het manueel blokkeren om het te kunnen simuleren.Dit doen we door de commando `sudo fail2ban-client set wordpress banip 192.0.2.1` in te geven. De ip-adres dat in de commando staat komt uit de log bestand.
 8. Probeer nu opnieuw te surfen naar de website in stap 1. Indien dit niet lukt, werkt fail2ban zonder problemen.
 9. Als het gelukt is, gaan we de geblokkeerde ip-adres terug verwijderen met de commando `sudo fail2ban-client set wordpress unbanip 192.0.2.1`
 ## Procedure/Documentation
@@ -60,7 +60,17 @@ fail2ban_wordress_jail_config:
 ```
 6. Open de terminal en voer de commando `vagrant provision pu004` uit. Zodat fail2ban geinstalleerd en geconfigureerd wordt.
 ## Test report
-
+1. Inloggen is gelukt.
+![Website berikbaar](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/Wordpress-website.jpeg)
+2. Uitvoer van terminal na meerdere keren verkeerd invoeren van wachtwoord/gebruikersnaam:
+![Website berikbaar](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/blokkeren-ip.jpeg)
+3. Webiste is geblokkeerd na het bannen van IP:
+![bannen van ip](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/ban-ip.jpeg)
+![Website niet berikbaar](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/Kangeenverbindingmaken.jpeg)
+4. Website is terug bereikbaar na het verwijderen van de IP:
+![Unban ip](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/unban-i%5E.jpeg)
+![Terug berikbaar](https://github.com/hilmiemrebayat/elnx-sme/blob/master/report/Afbeeldingen/bereikbaar.jpeg)
+Fail2Ban werkt zonder problemen. De enige ding die je manueel moet uitvoeren is het activeren van de plugin.
 ## Resources
 1. https://galaxy.ansible.com/memiah/fail2ban-wordpress/
 2. https://wordpress.org/plugins/wp-fail2ban/
