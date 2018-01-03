@@ -7,6 +7,10 @@
     - bertvv.httpd
     - bertvv.mariadb
     - bertvv.wordpress
+#    - nbigot.ansible-fail2ban
+    - memiah.fail2ban-wordpress
+
+
   pre_tasks:
     - name: Webserver private key kopieren
       copy:
@@ -26,14 +30,24 @@
   roles:
     - bertvv.rh-base
     - bertvv.bind
+
 - hosts: pr011
   sudo: true
   roles:
     - bertvv.rh-base
     - bertvv.samba
     - bertvv.vsftpd
+
+
 - hosts: pr001
   sudo: true
   roles:
     - bertvv.rh-base
     - bertvv.dhcp
+
+#- acl:
+#    path: /srv/shares/sales
+#    entity: technical
+#    etype: group
+#    permissions: r
+#    state: present

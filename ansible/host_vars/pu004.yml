@@ -20,3 +20,29 @@ wordpress_password: P@ssword
 
 httpd_SSLCertificateFile: /etc/pki/tls/certs/ca.crt
 httpd_SSLCertificateKeyFile: /etc/pki/tls/private/ca.key
+
+#fail2ban_services:
+#  - name: sshd
+#    port: 2222
+#    maxretry: 5
+#    bantime: -1
+#fail2ban_loglevel: 'WARNING'
+#fail2ban_logtarget: '/var/log/fail2ban.log'
+#fail2ban_ignoreip: ['192.0.2.10','192.0.2.11','192.0.2.20','192.0.2.50','172.16.0.2','172.16.0.3','172.16.0.10','172.16.0.11']
+#fail2ban_findtime: '{{ (60 * 10) }}'
+#fail2ban_maxretry: '3'
+
+fail2ban_wordress_plugin_name: wp-fail2ban
+fail2ban_wordress_plugin_version: "3.0.0"
+fail2ban_wordress_plugins_dir: /usr/share/wordpress/wp-content/plugins
+fail2ban_wordress_mu_plugins_dir: /usr/share/wordpress/wp-content/plugins
+fail2ban_wordress_mu_plugins_dir: true
+fail2ban_wordress_jail_config:
+  logpath: /var/log/messages
+  maxretry: 3
+  bantime: 21600
+  findtime: 86400
+
+wordpress_plugins:
+  - name: wp-fail2ban
+    version: 3.0.0

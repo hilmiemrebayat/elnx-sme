@@ -26,12 +26,12 @@ samba_shares:
   - name: sales
     comment: ''
     write_list: +sales
-    valid_users: +sales,+management
+    valid_users: +sales
     group: sales
   - name: it
     comment: ''
     write_list: +it
-    valid_users: +it,+management
+    valid_users: +it
     group: it
   - name: public
     comment: ''
