@@ -26,15 +26,39 @@ Jan  3 11:55:19 localhost wordpress(192.0.2.50)[12375]: Authentication attempt f
 8. Probeer nu opnieuw te surfen naar de website in stap 1. Indien dit niet lukt, werkt fail2ban zonder problemen.
 9. Als het gelukt is, gaan we de geblokkeerde ip-adres terug verwijderen met de commando `sudo fail2ban-client set wordpress unbanip 192.0.2.1`
 ## Procedure/Documentation
-### DHCP Server
-
-
+1. Download en installeer de rol fail2ban met de commando `ansible-galaxy install memiah.fail2ban-wordpress`
+2. Open de bestand site.yml in de map ansible. 
+3. Voeg de rol `memiah.fail2ban-wordpress` toe. De host pu004 moet er als volgt uit zien:
+```
+---
+- hosts: pu004
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.httpd
+    - bertvv.mariadb
+    - bertvv.wordpress
+    - memiah.fail2ban-wordpress
+```
+4. Open hierna de bestand pu004.yml in de map Ansible -> host_vars
+5. Voeg onderaan de volgende code toe:
+```
+#De naam van de plugin dat geïnstalleerd wordt
+fail2ban_wordress_plugin_name: wp-fail2ban
+#De versie van de plugin dat geïnstallerd wordt
+fail2ban_wordress_plugin_version: "3.0.0"
+#Locatie waarin de plugin geinstalleerd moet worden
+fail2ban_wordress_mu_plugins_dir: /usr/share/wordpress/wp-content/plugins
+#
+fail2ban_wordress_mu_plugins_dir: false
+#Fail2ban jail config settings.
+fail2ban_wordress_jail_config:
+  logpath: /var/log/messages
+  maxretry: 3
+  bantime: 21600
+  findtime: 86400
+```
 ## Test report
 
 ## Resources
-1. https://galaxy.ansible.com/bertvv/dhcp/
-2. https://wiki.vyos.net/wiki/User_Guide
-3. https://wiki.vyos.net/wiki/Basic_setup
-4. https://www.youtube.com/watch?v=mX_KIrSb6mE
-5. https://www.youtube.com/watch?v=S1bJpsS27Qk
-6. https://www.youtube.com/watch?v=bfQWY3XY3SI
+
