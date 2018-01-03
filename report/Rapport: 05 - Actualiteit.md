@@ -11,7 +11,7 @@
 3. Probeer daarna met de aangemaakte account en wachtwoord in te loggen.
 4. Als dat gelukt is, log uit en probeer een aantal keren verkeerd in te loggen.
 5. Open daarna je terminal en geef de commando `vagrant ssh pu004` in.
-6. Geef daarna de commando `sudo cat /var/log/messages` in. Je zal een geleijkaardige uitvoer als hieronder meoten zien:
+6. Geef daarna de commando `sudo cat /var/log/messages` in. Je zal een gelijkaardige uitvoer als hieronder moeten zien:
 ```
 Jan  3 11:54:58 localhost wordpress(192.0.2.50)[13697]: Authentication failure for test from 192.0.2.1
 Jan  3 11:55:00 localhost wordpress(192.0.2.50)[13697]: Authentication failure for test from 192.0.2.1
@@ -58,7 +58,7 @@ fail2ban_wordress_jail_config:
   bantime: 21600
   findtime: 86400
 ```
-6. Open de terminal en voer de commando `vagrant provision pu004` uit. Zodat fail2ban gePinstalleerd en geconfigureerd wordt.
+6. Open de terminal en voer de commando `vagrant provision pu004` uit. Zodat fail2ban geinstalleerd en geconfigureerd wordt.
 ## Test report
 
 ## Resources
