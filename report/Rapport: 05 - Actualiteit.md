@@ -58,7 +58,9 @@ fail2ban_wordress_jail_config:
   bantime: 21600
   findtime: 86400
 ```
+6. Open de terminal en voer de commando `vagrant provision pu004` uit. Zodat fail2ban gePinstalleerd en geconfigureerd wordt.
 ## Test report
 
 ## Resources
-
+1. https://galaxy.ansible.com/memiah/fail2ban-wordpress/
+2. https://wordpress.org/plugins/wp-fail2ban/
