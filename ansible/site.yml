@@ -9,6 +9,7 @@
     - bertvv.wordpress
 #    - nbigot.ansible-fail2ban
     - memiah.fail2ban-wordpress
+    - sbaerlocher.wp-cli
 
 
   pre_tasks:
@@ -37,6 +38,21 @@
     - bertvv.rh-base
     - bertvv.samba
     - bertvv.vsftpd
+  post_tasks:
+    - name: IT ACL
+      acl:
+        path: /srv/shares/it
+        entity: management
+        etype: group
+        permissions: rx
+        state: present
+    - name: Sales ACL
+      acl:
+        path: /srv/shares/sales
+        entity: management
+        etype: group
+        permissions: rx
+        state: present
 
 
 - hosts: pr001

@@ -26,13 +26,15 @@ samba_shares:
   - name: sales
     comment: ''
     write_list: +sales
-    valid_users: +sales
+    valid_users: +sales,+management
     group: sales
+    directory_mode: '0770'
   - name: it
     comment: ''
     write_list: +it
-    valid_users: +it
+    valid_users: +it,+management
     group: it
+    directory_mode: '0770'
   - name: public
     comment: ''
     public: yes
