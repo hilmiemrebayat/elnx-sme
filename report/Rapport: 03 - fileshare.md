@@ -378,4 +378,4 @@ Running test /vagrant/test/pr011/samba.bats
 5. https://galaxy.ansible.com/bertvv/rh-base/
 6. https://www.mkpasswd.net/index.php
 7. https://galaxy.ansible.com/bertvv/vsftpd/
-8. https://www.google.be/search?client=safari&rls=en&dcr=0&ei=y_lkWvO8CMbHwQK72o7oAQ&q=post+tasks&oq=post+tasks&gs_l=psy-ab.3..35i39k1l2j0i203k1j0i22i30k1l7.10034.10034.0.10823.1.1.0.0.0.0.93.93.1.1.0....0...1.1.64.psy-ab..0.1.93....0.hTVVEEVm07Y
+8. https://www.packtpub.com/mapt/book/networking_and_servers/9781784398293/2/ch02lvl1sec22/adding-pre-tasks-and-post-tasks-to-playbooks
