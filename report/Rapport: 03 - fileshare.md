@@ -82,11 +82,13 @@ samba_shares:
     write_list: +sales
     valid_users: +sales,+management
     group: sales
+    directory_mode: "0770"
   - name: it (system administration)
     comment: ''
     write_list: +it
     valid_users: +it,+management
     group: it
+    directory_mode: "0770"
   - name: public
     comment: ''
     public: yes
@@ -229,8 +231,33 @@ vsftpd_local_enable: true
 
 ```
 10. Nadat de samba file geconfigureerd is gaan we de sales folder read acces geven met ACL. Tot nu toe is dat niet gelukt, na de volgende opdracht ga ik hierop terug komen. 
-
+11. Als alles geconfigureerd is gaan we als laatst nog de permissie aanpassen voor het toegang tot sales en IT. Dit doen we door een ACL aan te maken in "site.yml" onder pr011. pr011 moet er als volgt uit zien:
+```
+- hosts: pr011
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.samba
+    - bertvv.vsftpd
+  post_tasks:
+    - name: IT ACL
+      acl:
+        path: /srv/shares/it
+        entity: management
+        etype: group
+        permissions: rx
+        state: present
+    - name: Sales ACL
+      acl:
+        path: /srv/shares/sales
+        entity: management
+        etype: group
+        permissions: rx
+        state: present
+```
+12. Nu is alles geconfigureerd en moet alles werken. Om te controleren voeren we de test uit (zie testrapport)
 ## Test report
+### Eerste uitvoering
  Na het uitvoeren van de test krijg ik de volgende als uitvoer:
  ```
  [vagrant@pr011 ~]$ sudo /vagrant/test/runbats.sh
@@ -276,6 +303,73 @@ Running test /vagrant/test/pr011/vsftp.bats
 
 ```
 De test is dus niet helemaal geslaagd. Er moet nog een ACL toegevoegd worden. Na heel wat pogingen is dat nog niet gelukt. Ik kom er terug op na het volgende opdracht.
+
+### Tweede uitvoering
+
+Na het wijzigen van de bestanden is het uiteindelijk gelukt om alles werkend te krijgen. Na het uitvoeren van de test krijg ik als uitvoer:
+```
+[vagrant@pr011 ~]$ sudo /vagrant/test/runbats.sh
+Running test /vagrant/test/common.bats
+ ✓ EPEL repository should be available
+ ✓ Bash-completion should have been installed
+ ✓ bind-utils should have been installed
+ ✓ Git should have been installed
+ ✓ Nano should have been installed
+ ✓ Tree should have been installed
+ ✓ Vim-enhanced should have been installed
+ ✓ Wget should have been installed
+ ✓ Admin user hilmi should exist
+ ✓ Custom /etc/motd should have been installed
+
+10 tests, 0 failures
+Running test /vagrant/test/pr011/vsftp.bats
+ ✓ VSFTPD service should be running
+ ✓ VSFTPD service should be enabled at boot
+ ✓ The ’curl’ command should be installed
+ ✓ The SELinux status should be ‘enforcing’
+ ✓ FTP traffic should pass through the firewall
+   VSFTPD configuration should be syntactically correct                    6/17
+ ✓ VSFTPD configuration should be syntactically correct
+ ✓ Anonymous user should not be able to see shares
+ ✓ read access for share ‘public’
+ ✓ write access for share ‘public’
+ ✓ read access for share ‘management’
+ ✓ write access for share ‘management’
+ ✓ read access for share ‘technical’
+ ✓ write access for share ‘technical’
+ ✓ read access for share ‘sales’
+ ✓ write access for share ‘sales’
+ ✓ read access for share ‘it’
+ ✓ write access for share ‘it’
+
+17 tests, 0 failures
+Running test /vagrant/test/pr011/samba.bats
+ ✓ The ’nmblookup’ command should be installed
+ ✓ The ’smbclient’ command should be installed
+ ✓ The Samba service should be running
+ ✓ The Samba service should be enabled at boot
+ ✓ The WinBind service should be running
+ ✓ The WinBind service should be enabled at boot
+ ✓ The SELinux status should be ‘enforcing’
+ ✓ Samba traffic should pass through the firewall
+ ✓ Check existence of users
+ ✓ Checks shell access of users
+ ✓ Samba configuration should be syntactically correct
+ ✓ NetBIOS name resolution should work
+ ✓ read access for share ‘public’
+ ✓ write access for share ‘public’
+ ✓ read access for share ‘management’
+ ✓ write access for share ‘management’
+ ✓ read access for share ‘technical’
+ ✓ write access for share ‘technical’
+ ✓ read access for share ‘sales’
+ ✓ write access for share ‘sales’
+ ✓ read access for share ‘it’
+ ✓ write access for share ‘it’
+
+22 tests, 0 failures
+```
+
 ## Resources
 1. https://galaxy.ansible.com/bertvv/samba/
 2. https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html
