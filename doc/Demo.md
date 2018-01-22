@@ -81,14 +81,14 @@ Tijdens het testen van de DHCP server en router gaan we ook de LAMP, DNS en File
 
 
 ## Demostratie van Fail2Ban voor Wordpress
-1. Surf via je de VM "Centos" naar http://192.0.2.50/wordpress/
+1. Surf via je de VM "Centos" naar http://avalon.lan/wordpress/wp-admin
 2. Probeer in te loggen met verkeerde inloggegevens en daarna met de juiste.
 3. Ga naar de plugin tabblad en activeer de plugin
 4. Terminal:
 - vagrant ssh pu004
 - sudo cat /var/log/messages
-- sudo fail2ban-client set wordpress banip <ip-adres dat staat in de logboek>
-5. Surf via je de VM "Centos" opniew naar http://192.0.2.50/wordpress/
+- sudo fail2ban-client set wordpress banip `<ip-adres dat staat in de logboek>`
+5. Surf via je de VM "Centos" opniew naar http://avalon.lan/wordpress/
 6. Terminal:
-- sudo fail2ban-client set wordpress unbanip 192.0.2.1
-7. Surf via je de VM "Centos" naar http://192.0.2.50/wordpress/
+- sudo fail2ban-client set wordpress unbanip `<ip-adres dat staat in de logboek>`
+7. Surf via je de VM "Centos" naar http://avalon.lan/wordpress/
