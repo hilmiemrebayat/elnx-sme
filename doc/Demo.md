@@ -57,6 +57,7 @@ Tijdens het testen van de DHCP server en router gaan we ook de LAMP, DNS en File
 | evyt           | evyt           | Technical     | Technical,management,sales,it en public |
 | christophev    | christophev    | IT            | IT,management en public                 |
 | stefaanv       | stefaanv       | Technical     | Technical,management,sales,it en public |
+
 3. Open "Files", klik daarna op "connecteer met de server" en geen als url smb://172.16.0.11 in.
 4. Log in met de volgende gegevens (werkgroep voor alle gebruikers is "avalon.lan":
 | Gebruikersnaam | Wachtwoord     | Groep         | Toegang tot                             |
