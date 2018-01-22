@@ -41,42 +41,43 @@ Tijdens het testen van de DHCP server en router gaan we ook de LAMP, DNS en File
 ### FileServer
 1. Open Firefox en surf naar ftp://172.16.0.11
 2. Log in met de volgende gegevens:
-| Gebruikersnaam | Wachtwoord     | Groep         | Toegang tot                             |
-|----------------|----------------|---------------|-----------------------------------------|
-| hilmi          | hilmiemrebayat | Administrator | Alles                                   |
-| stevenh        | stevenh        | Management    | Management en public                    |
-| stevenv        | stevenv        | Technical     | Technical,management,sales,it en public |
-| leend          | leend          | Technical     | Technical,management,sales,it en public |
-| svena          | svena          | Sales         | Sales,management en public              |
-| nehirb         | nehirb         | IT            | IT,management en public                 |
-| alexanderd     | alexanderd     | Technical     | Technical,management,sales,it en public |
-| krisv          | krisv          | Management    | Management en public                    |
-| benoitp        | benoitp        | Sales         | Sales,management en public              |
-| anc            | anc            | Technical     | Technical,management,sales,it en public |
-| elenaa         | elenaa         | Management    | Management en public                    |
-| evyt           | evyt           | Technical     | Technical,management,sales,it en public |
-| christophev    | christophev    | IT            | IT,management en public                 |
-| stefaanv       | stefaanv       | Technical     | Technical,management,sales,it en public |
+
+| Gebruikersnaam 	| Wachtwoord     	| Groep         	| Toegang tot                             	|
+|----------------	|----------------	|---------------	|-----------------------------------------	|
+| hilmi          	| hilmiemrebayat 	| Administrator 	| Alles                                   	|
+| stevenh        	| stevenh        	| Management    	| Management en public                    	|
+| stevenv        	| stevenv        	| Technical     	| Technical,management,sales,it en public 	|
+| leend          	| leend          	| Technical     	| Technical,management,sales,it en public 	|
+| svena          	| svena          	| Sales         	| Sales,management en public              	|
+| nehirb         	| nehirb         	| IT            	| IT,management en public                 	|
+| alexanderd     	| alexanderd     	| Technical     	| Technical,management,sales,it en public 	|
+| krisv          	| krisv          	| Management    	| Management en public                    	|
+| benoitp        	| benoitp        	| Sales         	| Sales,management en public              	|
+| anc            	| anc            	| Technical     	| Technical,management,sales,it en public 	|
+| elenaa         	| elenaa         	| Management    	| Management en public                    	|
+| evyt           	| evyt           	| Technical     	| Technical,management,sales,it en public 	|
+| christophev    	| christophev    	| IT            	| IT,management en public                 	|
+| stefaanv       	| stefaanv       	| Technical     	| Technical,management,sales,it en public 	|
 
 3. Open "Files", klik daarna op "connecteer met de server" en geen als url smb://172.16.0.11 in.
 4. Log in met de volgende gegevens (werkgroep voor alle gebruikers is "avalon.lan":
-| Gebruikersnaam | Wachtwoord     | Groep         | Toegang tot                             |
-|----------------|----------------|---------------|-----------------------------------------|
-| hilmi          | hilmiemrebayat | Administrator | Alles                                   |
-| stevenh        | stevenh        | Management    | Management en public                    |
-| stevenv        | stevenv        | Technical     | Technical,management,sales,it en public |
-| leend          | leend          | Technical     | Technical,management,sales,it en public |
-| svena          | svena          | Sales         | Sales,management en public              |
-| nehirb         | nehirb         | IT            | IT,management en public                 |
-| alexanderd     | alexanderd     | Technical     | Technical,management,sales,it en public |
-| krisv          | krisv          | Management    | Management en public                    |
-| benoitp        | benoitp        | Sales         | Sales,management en public              |
-| anc            | anc            | Technical     | Technical,management,sales,it en public |
-| elenaa         | elenaa         | Management    | Management en public                    |
-| evyt           | evyt           | Technical     | Technical,management,sales,it en public |
-| christophev    | christophev    | IT            | IT,management en public                 |
-| stefaanv       | stefaanv       | Technical     | Technical,management,sales,it en public |
 
+| Gebruikersnaam 	| Wachtwoord     	| Groep         	| Toegang tot                             	|
+|----------------	|----------------	|---------------	|-----------------------------------------	|
+| hilmi          	| hilmiemrebayat 	| Administrator 	| Alles                                   	|
+| stevenh        	| stevenh        	| Management    	| Management en public                    	|
+| stevenv        	| stevenv        	| Technical     	| Technical,management,sales,it en public 	|
+| leend          	| leend          	| Technical     	| Technical,management,sales,it en public 	|
+| svena          	| svena          	| Sales         	| Sales,management en public              	|
+| nehirb         	| nehirb         	| IT            	| IT,management en public                 	|
+| alexanderd     	| alexanderd     	| Technical     	| Technical,management,sales,it en public 	|
+| krisv          	| krisv          	| Management    	| Management en public                    	|
+| benoitp        	| benoitp        	| Sales         	| Sales,management en public              	|
+| anc            	| anc            	| Technical     	| Technical,management,sales,it en public 	|
+| elenaa         	| elenaa         	| Management    	| Management en public                    	|
+| evyt           	| evyt           	| Technical     	| Technical,management,sales,it en public 	|
+| christophev    	| christophev    	| IT            	| IT,management en public                 	|
+| stefaanv       	| stefaanv       	| Technical     	| Technical,management,sales,it en public 	|
 
 
 ## Demostratie van Fail2Ban voor Wordpress
