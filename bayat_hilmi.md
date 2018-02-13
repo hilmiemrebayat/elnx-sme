@@ -22,9 +22,17 @@ W9:
     - admin-wachtwoord juist zetten in de opgave
     - Voeg acl's toe (post_tasks: in site.yml) om laatste permissieproblemen op te lossen
 
+Eindevaluatie:
+
+- Acceptatietests getoond: LAMP, master & slave DNS, Fileserver
+- Integratie/Werkstation:
+    - DHCP ok
+    - Lokale services ok (op NetBIOS/FQDN)
+    - Internettoegang ok
+
 ### Eindbeoordeling
 
-O1: <BEOORDELING>
+O1: Deskundig
 
 ## Troubleshooting
 
@@ -59,29 +67,37 @@ Beoordeling voor deze opdracht: nog niet bekwaam
 
 ### Derde troubleshooting-opdracht
 
-
+Prima! Verslag in aparte repo: <https://github.com/hilmiemrebayat/Linux-troubelshoot/blob/master/Raport.md>
 
 ### Eindbeoordeling
 
-O2: <BEOORDELING>
+O2: Bekwaam
 
 ## Opdracht Actualiteit
 
+Implementatie Fail2ban met Wordpress plugin
+
 ### Eindbeoordeling
 
-O3: <BEOORDELING>
+O3: Bekwaam
 
 ## Rapportering
 
 ### Laboverslagen
 
-R1: <BEOORDELING>
+Verslagen zijn prima
+
+R1: Deskundig
 
 ### Demonstraties
 
-R2: <BEOORDELING>
+Demo eindevaluatie goed voorbereid, scenario op papier
+
+R2: Deskundig
 
 ### Cheat sheet
 
-R3: <BEOORDELING>
+Niet apart bijgehouden, maar wel veel info in rapporten toegevoegd
+
+R3: Bekwaam
 
